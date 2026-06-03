@@ -1,0 +1,195 @@
+{
+    "/getPolicy": {
+        "post": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "getPolicy"
+            ]
+        }
+    },
+    "/policy/submitwithcase": {
+        "post": {
+            "summary": "",
+            "description": "",
+            "consumes": [
+                "application/json"
+            ],
+            "produces": [],
+            "parameters": [
+                {
+                    "in": "body",
+                    "name": "body",
+                    "description": "policy creation payload",
+                    "required": false
+                }
+            ],
+            "responses": {
+                "200": {
+                    "description": "policy submitted sucessfully"
+                }
+            },
+            "tags": [
+                "getPolicy"
+            ]
+        }
+    },
+    "/policy/search": {
+        "post": {
+            "summary": "",
+            "description": "",
+            "consumes": [
+                "application/json"
+            ],
+            "produces": [],
+            "parameters": [],
+            "responses": {
+                "200": {
+                    "description": "policy searched sucessfully"
+                }
+            },
+            "tags": [
+                "getPolicy"
+            ]
+        }
+    },
+    "/policy/draft": {
+        "post": {
+            "summary": "",
+            "description": "",
+            "consumes": [
+                "application/json"
+            ],
+            "produces": [],
+            "parameters": [
+                {
+                    "in": "body",
+                    "name": "body",
+                    "description": "policy creation payload",
+                    "required": false
+                }
+            ],
+            "responses": {
+                "200": {
+                    "description": "policy drafted sucessfully"
+                }
+            },
+            "tags": [
+                "getPolicy"
+            ]
+        }
+    },
+    "/policy/getDrafts": {
+        "get": {
+            "summary": "",
+            "description": "",
+            "consumes": [
+                "application/json"
+            ],
+            "produces": [],
+            "parameters": [],
+            "responses": {
+                "200": {
+                    "description": "draft applicationfetched successfully"
+                }
+            },
+            "tags": [
+                "getPolicy"
+            ]
+        }
+    },
+    "/getPolicyByApplicationId": {
+        "post": {
+            "summary": "",
+            "description": "",
+            "consumes": [
+                "application/json"
+            ],
+            "produces": [],
+            "parameters": [],
+            "responses": {
+                "200": {
+                    "description": "policyData fectched succesfully"
+                }
+            },
+            "tags": [
+                "getPolicy"
+            ]
+        }
+    },
+    "/policy/update": {
+        "post": {
+            "summary": "",
+            "description": "",
+            "consumes": [
+                "application/json"
+            ],
+            "produces": [],
+            "parameters": [
+                {
+                    "in": "body",
+                    "name": "body",
+                    "description": "policy creation payload",
+                    "required": false
+                }
+            ],
+            "responses": {
+                "200": {
+                    "description": "policy Updated sucessfully"
+                }
+            },
+            "tags": [
+                "getPolicy"
+            ]
+        }
+    },
+    "/searchOnePolicy": {
+        "post": {
+            "summary": "",
+            "description": "",
+            "consumes": [
+                "application/json"
+            ],
+            "produces": [],
+            "parameters": [],
+            "responses": {
+                "200": {
+                    "description": "policyData fectched succesfully"
+                }
+            },
+            "tags": [
+                "getPolicy"
+            ]
+        }
+    },
+    "/policy/submit": {
+        "post": {
+            "summary": "",
+            "description": "",
+            "consumes": [
+                "application/json"
+            ],
+            "produces": [],
+            "parameters": [
+                {
+                    "in": "body",
+                    "name": "body",
+                    "description": "policy creation payload",
+                    "required": false
+                }
+            ],
+            "responses": {
+                "200": {
+                    "description": "policy submitted sucessfully"
+                }
+            },
+            "tags": [
+                "getPolicy"
+            ]
+        }
+    }
+}

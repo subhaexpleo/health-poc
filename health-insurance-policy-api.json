@@ -1,0 +1,13 @@
+{
+    "displayName": "Health-Insurance-Policy-Api",
+    "appName": "health-insurance-policy-api",
+    "description": "health insurance policy api ",
+    "lastModified": "2026-05-21T06:46:07.894Z",
+    "imgSourcePath": "",
+    "version": "1.0.0",
+    "appType": "apiOnly",
+    "templateName": "blank",
+    "createDate": "2026-05-21T06:46:07.060Z",
+    "analyticsId": "7307b3e4-c87d-e752-a0e4-f64ffa5fb9dc",
+    "createdStudioVersion": "9.3.0"
+}

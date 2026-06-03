@@ -1,0 +1,184 @@
+[
+    {
+        "id": "SSD_SERVICE_ID_sd_CCtlqDYKdfa9to4D",
+        "type": "tab",
+        "createdDate": "2026-05-25T06:23:20.973Z",
+        "label": "createApplication",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "createApplication",
+        "relativeParentPath": "Service"
+    },
+    {
+        "id": "sd_HZVhp2NPwhGmKPyA",
+        "type": "HttpIn",
+        "z": "SSD_SERVICE_ID_sd_CCtlqDYKdfa9to4D",
+        "viewType": "server",
+        "nodeType": "start",
+        "name": "",
+        "path": "/create-application",
+        "uploadpath": "",
+        "summary": "",
+        "description": "",
+        "method": "post",
+        "sequenceId": "",
+        "consumes": "",
+        "produces": "",
+        "filetype": "path",
+        "acceptFileUpload": false,
+        "useDataModel": false,
+        "dataModelIsArray": false,
+        "erd": "",
+        "erdName": "",
+        "entity": "",
+        "entityId": "",
+        "ref": "",
+        "editableListData": {
+            "responses": [],
+            "params": [],
+            "produces": [],
+            "consumes": []
+        },
+        "inputs": 0,
+        "outputs": 1,
+        "validateRequestUsingSwaggerDocs": false,
+        "category": "HTTP",
+        "x": 65,
+        "y": 180,
+        "wires": [
+            [
+                "sd_tHn9fnkA5WRUSlRx"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "uploadpath": {
+                "type": "str",
+                "value": "",
+                "nullable": "true",
+                "nullableValue": "",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "createApplication",
+        "functionName": "sd_HZVhp2NPwhGmKPyA"
+    },
+    {
+        "id": "sd_5wJbRwPwSKIPbIQw",
+        "type": "HttpOut",
+        "z": "SSD_SERVICE_ID_sd_CCtlqDYKdfa9to4D",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "headers": {},
+        "responseBody": {
+            "type": "bh.local",
+            "value": "result",
+            "ssd_typedInputField": true
+        },
+        "httpcode": {
+            "type": "num",
+            "value": 200,
+            "ssd_typedInputField": true
+        },
+        "responseType": "obj",
+        "swaggerResponse": {},
+        "responseMapping": {
+            "status": 200,
+            "obj": "bh.local.result",
+            "send": "bh.local.result"
+        },
+        "dataModelIsArray": false,
+        "inputs": 1,
+        "outputs": 0,
+        "erd": "",
+        "entity": "",
+        "entityId": "",
+        "ref": "",
+        "editableListData": {
+            "headers": [],
+            "produces": [],
+            "responses": []
+        },
+        "cookiesList": {},
+        "switchStates": {
+            "headers": "Map",
+            "cookies": "Map"
+        },
+        "functionName": "sd_5wJbRwPwSKIPbIQw",
+        "category": "HTTP",
+        "x": 665,
+        "y": 180,
+        "wires": [],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "createApplication",
+        "generated": true
+    },
+    {
+        "id": "sd_tHn9fnkA5WRUSlRx",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_CCtlqDYKdfa9to4D",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.local.applicationData = {\n\n    application_id: \"APP\" + Date.now(),\n\n    fullname: bh.input.body.applicantName,\n\n    dob: bh.input.body.dob,\n\n    gender: bh.input.body.gender,\n\n    mobile: bh.input.body.mobile,\n\n    email: bh.input.body.email,\n\n    address: bh.input.body.address,\n\n    plan_type: bh.input.body.planType,\n\n    sum_insured: bh.input.body.sumInsured,\n\n    policy_term: bh.input.body.policyTerm,\n\n    medical_declaration: bh.input.body.medicalDeclaration,\n\n    status: \"Draft\"\n\n};",
+        "functionName": "sd_tHn9fnkA5WRUSlRx",
+        "category": "Function",
+        "x": 265,
+        "y": 180,
+        "wires": [
+            [
+                "sd_PClG7itopReOo67f"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "createApplication",
+        "generated": true
+    },
+    {
+        "id": "sd_PClG7itopReOo67f",
+        "type": "insert",
+        "z": "SSD_SERVICE_ID_sd_CCtlqDYKdfa9to4D",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "erd": "_DM_l5t26s97q",
+        "entityId": "_EN_9ctpcuh1k",
+        "_UI_entityName": "policy_applications",
+        "dbConfigId": "sd_nbkKdk1GxCrX8E0j",
+        "insertObject": "bh.local.applicationData",
+        "resultMapping": "bh.local.result",
+        "functionName": "sd_PClG7itopReOo67f",
+        "category": "Data Model",
+        "x": 425,
+        "y": 180,
+        "wires": [
+            [
+                "sd_5wJbRwPwSKIPbIQw"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "insertObject": {
+                "type": "bh.local",
+                "value": "applicationData",
+                "constant": false
+            },
+            "resultMapping": {
+                "type": "bh.local",
+                "value": "result",
+                "nullable": "true",
+                "nullableValue": "",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "createApplication",
+        "generated": true
+    }
+]

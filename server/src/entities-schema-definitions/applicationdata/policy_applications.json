@@ -1,0 +1,353 @@
+{
+    "name": "policy_applications",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "description": "",
+    "type": "object",
+    "id": "_EN_9ctpcuh1k",
+    "y": 10,
+    "properties": {
+        "id": {
+            "name": "id",
+            "format": "",
+            "type": "number",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_nejcg5knjb",
+                "nullable": false,
+                "dbType": "bigint",
+                "primary": true,
+                "placeholder": "",
+                "dbColName": "",
+                "constraints": {
+                    "primaryGenerated": true
+                }
+            }
+        },
+        "application_id": {
+            "name": "application_id",
+            "format": "",
+            "type": "string",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_6xt8xapbz6",
+                "subCategoryType": null,
+                "nullable": false,
+                "dbType": "text",
+                "primary": false,
+                "placeholder": "",
+                "dbColName": "",
+                "constraints": {}
+            }
+        },
+        "fullname": {
+            "name": "fullname",
+            "format": "",
+            "type": "string",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_n8693iz94e",
+                "subCategoryType": null,
+                "nullable": false,
+                "dbType": "text",
+                "primary": false,
+                "placeholder": "",
+                "dbColName": "",
+                "constraints": {}
+            }
+        },
+        "dob": {
+            "name": "dob",
+            "format": "date-time",
+            "type": "string",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_mhoyyloywe",
+                "subCategoryType": "date",
+                "nullable": false,
+                "dbType": "timestamp with time zone",
+                "primary": false,
+                "placeholder": "",
+                "dbColName": "",
+                "constraints": {}
+            }
+        },
+        "age": {
+            "name": "age",
+            "format": "",
+            "type": "number",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_tbqy5ryim5",
+                "subCategoryType": null,
+                "nullable": false,
+                "dbType": "bigint",
+                "primary": false,
+                "placeholder": "",
+                "dbColName": "",
+                "constraints": {}
+            }
+        },
+        "gender": {
+            "name": "gender",
+            "format": "",
+            "type": "string",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_38b08pheoy",
+                "subCategoryType": null,
+                "nullable": false,
+                "dbType": "text",
+                "primary": false,
+                "placeholder": "",
+                "dbColName": "",
+                "constraints": {}
+            }
+        },
+        "mobile": {
+            "name": "mobile",
+            "format": "",
+            "type": "number",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_3mzv6zp6cf",
+                "subCategoryType": null,
+                "nullable": false,
+                "dbType": "bigint",
+                "primary": false,
+                "placeholder": "",
+                "dbColName": "",
+                "constraints": {}
+            }
+        },
+        "email": {
+            "name": "email",
+            "format": "",
+            "type": "string",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_16lzovzej7",
+                "subCategoryType": null,
+                "nullable": false,
+                "dbType": "text",
+                "primary": false,
+                "placeholder": "",
+                "dbColName": "",
+                "constraints": {}
+            }
+        },
+        "address": {
+            "name": "address",
+            "format": "",
+            "type": "string",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_i7s0a58z3c",
+                "subCategoryType": null,
+                "nullable": false,
+                "dbType": "text",
+                "primary": false,
+                "placeholder": "",
+                "dbColName": "",
+                "constraints": {}
+            }
+        },
+        "policy": {
+            "name": "policy",
+            "format": "",
+            "type": "string",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_ynrgqv8mgk",
+                "subCategoryType": null,
+                "nullable": false,
+                "dbType": "text",
+                "primary": false,
+                "placeholder": "",
+                "dbColName": "",
+                "constraints": {}
+            }
+        },
+        "plan_type": {
+            "name": "plan_type",
+            "format": "",
+            "type": "string",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_kuyjx7k3zl",
+                "subCategoryType": null,
+                "nullable": false,
+                "dbType": "text",
+                "primary": false,
+                "placeholder": "",
+                "dbColName": "",
+                "constraints": {}
+            }
+        },
+        "base_premium": {
+            "name": "base_premium",
+            "format": "",
+            "type": "number",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_jt4ptnvx0l",
+                "subCategoryType": null,
+                "nullable": false,
+                "dbType": "bigint",
+                "primary": false,
+                "placeholder": "",
+                "dbColName": "",
+                "constraints": {}
+            }
+        },
+        "discount_percentage": {
+            "name": "discount_percentage",
+            "format": "",
+            "type": "number",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_9yicv4uzra",
+                "subCategoryType": null,
+                "nullable": false,
+                "dbType": "bigint",
+                "primary": false,
+                "placeholder": "",
+                "dbColName": "",
+                "constraints": {}
+            }
+        },
+        "final_premium": {
+            "name": "final_premium",
+            "format": "",
+            "type": "number",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_k7c8wvbrro",
+                "subCategoryType": null,
+                "nullable": false,
+                "dbType": "bigint",
+                "primary": false,
+                "placeholder": "",
+                "dbColName": "",
+                "constraints": {}
+            }
+        },
+        "medical_declaration": {
+            "name": "medical_declaration",
+            "format": "",
+            "type": "object",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_vf2sqkic43",
+                "subCategoryType": null,
+                "nullable": false,
+                "dbType": "jsonb",
+                "primary": false,
+                "placeholder": "",
+                "dbColName": "",
+                "constraints": {}
+            }
+        },
+        "status": {
+            "name": "status",
+            "format": "",
+            "type": "string",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_edz2ll1953",
+                "subCategoryType": null,
+                "nullable": false,
+                "dbType": "text",
+                "primary": false,
+                "placeholder": "",
+                "dbColName": "",
+                "constraints": {}
+            }
+        },
+        "created_at": {
+            "name": "created_at",
+            "format": "date-time",
+            "type": "string",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_6u6du8yy2n",
+                "subCategoryType": "date",
+                "nullable": false,
+                "dbType": "timestamp with time zone",
+                "primary": false,
+                "placeholder": "",
+                "dbColName": "",
+                "constraints": {}
+            }
+        },
+        "ticket_type": {
+            "name": "ticket_type",
+            "format": "",
+            "type": "string",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_f1l7r6ye02",
+                "subCategoryType": null,
+                "nullable": false,
+                "dbType": "text",
+                "primary": false,
+                "placeholder": "",
+                "dbColName": "",
+                "constraints": {}
+            }
+        }
+    },
+    "required": [
+        "application_id",
+        "dob",
+        "gender",
+        "mobile",
+        "email",
+        "address",
+        "plan_type",
+        "status",
+        "medical_declaration",
+        "fullname",
+        "age",
+        "policy",
+        "base_premium",
+        "discount_percentage",
+        "created_at",
+        "final_premium",
+        "ticket_type"
+    ],
+    "value": "",
+    "__attributeExpansion__": true,
+    "__operationExpansion__": false,
+    "x": 20,
+    "userList": {
+        "SSD_SERVICE_ID_sd_CCtlqDYKdfa9to4D": [
+            "sd_PClG7itopReOo67f"
+        ],
+        "SSD_SERVICE_ID_sd_KwPu3PF49Obf7td2": [
+            "sd_v79B2mlltMwHbhyF",
+            "sd_g1K4PibCfLZFeyIx",
+            "sd_Wk4BFD1WUGMATDes",
+            "sd_Py0qbyTDef8lTiHX",
+            "sd_v4UwAoFunZ0Djc41"
+        ]
+    },
+    "__n__metadata__": {}
+}

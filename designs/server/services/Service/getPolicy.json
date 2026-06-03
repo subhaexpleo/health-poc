@@ -1,0 +1,2044 @@
+[
+    {
+        "id": "SSD_SERVICE_ID_sd_KwPu3PF49Obf7td2",
+        "type": "tab",
+        "createdDate": "2026-05-25T09:21:40.202Z",
+        "label": "getPolicy",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "getPolicy",
+        "relativeParentPath": "Service"
+    },
+    {
+        "id": "sd_4nnQdINFgsnV7yJR",
+        "type": "HttpIn",
+        "z": "SSD_SERVICE_ID_sd_KwPu3PF49Obf7td2",
+        "viewType": "server",
+        "nodeType": "start",
+        "name": "",
+        "path": "/getPolicy",
+        "uploadpath": "",
+        "summary": "",
+        "description": "",
+        "method": "post",
+        "sequenceId": "",
+        "consumes": "",
+        "produces": "",
+        "filetype": "path",
+        "acceptFileUpload": false,
+        "useDataModel": false,
+        "dataModelIsArray": false,
+        "erd": "",
+        "erdName": "",
+        "entity": "",
+        "entityId": "",
+        "ref": "",
+        "editableListData": {
+            "responses": [],
+            "params": [],
+            "produces": [],
+            "consumes": []
+        },
+        "inputs": 0,
+        "outputs": 1,
+        "validateRequestUsingSwaggerDocs": false,
+        "category": "HTTP",
+        "x": 65,
+        "y": 100,
+        "wires": [
+            [
+                "sd_7R41Q9AjCfLcusgY"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "uploadpath": {
+                "type": "str",
+                "value": "",
+                "nullable": "true",
+                "nullableValue": "",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "getPolicy",
+        "functionName": "sd_4nnQdINFgsnV7yJR"
+    },
+    {
+        "id": "sd_byiWnU75a9LeTAsL",
+        "type": "HttpOut",
+        "z": "SSD_SERVICE_ID_sd_KwPu3PF49Obf7td2",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "headers": {},
+        "responseBody": {
+            "type": "bh.local",
+            "value": "result",
+            "ssd_typedInputField": true
+        },
+        "httpcode": {
+            "type": "num",
+            "value": 200,
+            "ssd_typedInputField": true
+        },
+        "responseType": "obj",
+        "swaggerResponse": {},
+        "responseMapping": {
+            "status": 200,
+            "obj": "bh.local.result",
+            "send": "bh.local.result"
+        },
+        "dataModelIsArray": false,
+        "inputs": 1,
+        "outputs": 0,
+        "erd": "",
+        "entity": "",
+        "entityId": "",
+        "ref": "",
+        "editableListData": {
+            "headers": [],
+            "produces": [],
+            "responses": []
+        },
+        "cookiesList": {},
+        "switchStates": {
+            "headers": "Map",
+            "cookies": "Map"
+        },
+        "functionName": "sd_byiWnU75a9LeTAsL",
+        "category": "HTTP",
+        "x": 665,
+        "y": 100,
+        "wires": [],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "getPolicy",
+        "generated": true
+    },
+    {
+        "id": "sd_7R41Q9AjCfLcusgY",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_KwPu3PF49Obf7td2",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.local.payload = {\n  \"pageNumber\": 0,\n  \"pageSize\": 20,\n  \"multiplicity\": \"multiple\",\n  \"filter\": {\n   \n  }\n}",
+        "functionName": "sd_7R41Q9AjCfLcusgY",
+        "category": "Function",
+        "x": 225,
+        "y": 100,
+        "wires": [
+            [
+                "sd_DY15vxZcCybd72OP"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "getPolicy",
+        "generated": true
+    },
+    {
+        "id": "sd_DY15vxZcCybd72OP",
+        "type": "ServerHttpRequest",
+        "z": "SSD_SERVICE_ID_sd_KwPu3PF49Obf7td2",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "method": "post",
+        "methodMappingObj": {},
+        "urlMapping": "\"https://reels-pt.neutrinos-apps.com/integration/api/records/filter/72b58c39-817f-4204-95dc-4f5eec8fd929/02deac5e-69f8-4359-acd3-143f13b92b6f/63c03bbc-3038-47aa-87f3-28f737019de1\"",
+        "urlMappingObj": {
+            "mapVarType": "str",
+            "mapVarValue": "https://reels-pt.neutrinos-apps.com/integration/api/records/filter/72b58c39-817f-4204-95dc-4f5eec8fd929/02deac5e-69f8-4359-acd3-143f13b92b6f/63c03bbc-3038-47aa-87f3-28f737019de1"
+        },
+        "ret": "json",
+        "retMappingObj": {},
+        "reqBody": "bh.local.payload",
+        "reqBodyObj": {
+            "mapVarType": "bh.local",
+            "mapVarValue": "payload"
+        },
+        "resultMapping": "bh.local.result",
+        "resultMappingObj": {
+            "mapVarType": "bh.local",
+            "mapVarValue": "result"
+        },
+        "headers": {
+            "token": "d674bdf6-0554-42a8-ae27-264befe13c23.ceee41185aba511f29d2c85a1471a03eaf828eda0dc42f8b914c384051f8c46f"
+        },
+        "headersObj": [
+            {
+                "key": "token",
+                "defaultValue": "d674bdf6-0554-42a8-ae27-264befe13c23.ceee41185aba511f29d2c85a1471a03eaf828eda0dc42f8b914c384051f8c46f"
+            }
+        ],
+        "headerMappingObj": {},
+        "params": {},
+        "paramsObj": [],
+        "paramMappingObj": {},
+        "useAuthTypeMappingObj": {},
+        "useAuthUsername": "",
+        "useAuthUsernameMappingObj": "",
+        "useAuthPassword": "",
+        "useAuthPasswordMappingObj": "",
+        "useAuthToken": "",
+        "useAuthTokenMappingObj": "",
+        "useQueryString": false,
+        "tls": "",
+        "followRedirect": true,
+        "paytoqs": false,
+        "useAuthentication": false,
+        "rejectUnauthorized": false,
+        "proxy": "",
+        "useProxy": false,
+        "usetls": false,
+        "cookiesMapObj": {},
+        "cookiesList": {},
+        "switchStates": {
+            "cookies": "Map"
+        },
+        "editableListData": {},
+        "timeout": {
+            "type": "num",
+            "value": ""
+        },
+        "functionName": "sd_DY15vxZcCybd72OP",
+        "category": "HTTP",
+        "x": 385,
+        "y": 100,
+        "wires": [
+            [
+                "sd_byiWnU75a9LeTAsL"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "getPolicy",
+        "generated": true
+    },
+    {
+        "id": "sd_Ban9aOvDoPsGPaiE",
+        "type": "HttpIn",
+        "z": "SSD_SERVICE_ID_sd_KwPu3PF49Obf7td2",
+        "viewType": "server",
+        "nodeType": "start",
+        "name": "policySubmitWithCase",
+        "path": "/policy/submitwithcase",
+        "uploadpath": "",
+        "summary": "",
+        "description": "",
+        "method": "post",
+        "sequenceId": "",
+        "consumes": "",
+        "produces": "",
+        "filetype": "path",
+        "acceptFileUpload": false,
+        "useDataModel": false,
+        "dataModelIsArray": false,
+        "erd": "",
+        "erdName": "",
+        "entity": "",
+        "entityId": "",
+        "ref": "",
+        "editableListData": {
+            "responses": [],
+            "params": [
+                {
+                    "key": "body",
+                    "desc": "policy creation payload",
+                    "type": "body",
+                    "required": false,
+                    "rowId": "sd_8sAboDmQ35ndujUu",
+                    "valid": true
+                }
+            ],
+            "produces": [],
+            "consumes": [
+                {
+                    "key": "application/json",
+                    "rowId": "sd_GyDQleqIi5gcagze",
+                    "valid": true
+                }
+            ]
+        },
+        "inputs": 0,
+        "outputs": 1,
+        "validateRequestUsingSwaggerDocs": false,
+        "category": "HTTP",
+        "x": 65,
+        "y": 280,
+        "wires": [
+            [
+                "sd_uvNTbtMv1kugmsHA"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "uploadpath": {
+                "type": "str",
+                "value": "",
+                "nullable": "true",
+                "nullableValue": "",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "getPolicy",
+        "functionName": "sd_Ban9aOvDoPsGPaiE"
+    },
+    {
+        "id": "sd_Fk9Wf6nmiuBExBxp",
+        "type": "HttpOut",
+        "z": "SSD_SERVICE_ID_sd_KwPu3PF49Obf7td2",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "headers": {},
+        "responseBody": {
+            "type": "bh",
+            "value": "response",
+            "ssd_typedInputField": true
+        },
+        "httpcode": {
+            "type": "num",
+            "value": 200,
+            "ssd_typedInputField": true
+        },
+        "responseType": "obj",
+        "swaggerResponse": {},
+        "responseMapping": {
+            "status": 200,
+            "obj": "bh.response",
+            "send": "bh.response"
+        },
+        "dataModelIsArray": false,
+        "inputs": 1,
+        "outputs": 0,
+        "erd": "",
+        "entity": "",
+        "entityId": "",
+        "ref": "",
+        "editableListData": {
+            "headers": [],
+            "produces": [],
+            "responses": [
+                {
+                    "key": "policy submitted sucessfully",
+                    "value": "200",
+                    "rowId": "sd_xxEBhk3O7dHHR0QX",
+                    "valid": true
+                }
+            ]
+        },
+        "cookiesList": {},
+        "switchStates": {
+            "headers": "Map",
+            "cookies": "Map"
+        },
+        "functionName": "sd_Fk9Wf6nmiuBExBxp",
+        "category": "HTTP",
+        "x": 1125,
+        "y": 280,
+        "wires": [],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "getPolicy",
+        "generated": true
+    },
+    {
+        "id": "sd_uvNTbtMv1kugmsHA",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_KwPu3PF49Obf7td2",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "// bh.local.ticketData = {\n//     case_id: caseId,\n//     ticket_type: body.ticketType || \"Incident\",\n//     title: body.title || \"\",\n//     description: body.description || \"\",\n//     category: body.category || \"\",\n//     priority: body.priority || \"\",\n//     assignment_group: body.assignmentGroup || \"\",\n//     requester_name: body.requesterName || \"\",\n//     requester_email: body.requesterEmail || \"\",\n//     status: \"NEW\"\n// };\n// bh.local.policyPayload = {\n//    application_id:\n//     `APP-${Date.now()}`,\n//   fullname: bh.input.fullname || \"\",\n//   dob: body.formattedDob || \"\",\n//   gender: body.gender || \"\",\n//   age:body.age || \"\",\n//   mobile: body.mobile || \"\",\n//   address: body.address || \"\",\n//   base_premium: body.basePremium || \"\",\n//   discount_percentage: body.discountPercent || \"\",\n//   policy:body.selectedPolicyTerm,\n//   plan_type:body.selectedPlanType,\n//   status:\"submitted\"\n// };\n\n// console.log(\"test\",bh);\nconst body = bh.input.body || {};\nbh.local.policyPayload = {\n   application_id:\n    `APP-${Date.now()}`,\n  ticket_type: body.ticket_type,\n  fullname: body.fullname || \"\",\n  dob: body.dob || null,\n  gender: body.gender || \"\",\n  email: body.email || \"\",\n  age:body.age || 0,\n  mobile: body.mobile || 0,\n  address: body.address || \"\",\n  base_premium: body.base_premium || 0,\n  discount_percentage: body.discount_percentage || 0,\n  final_premium:body.final_premium || 0,\n  medical_declaration:body.medical_declaration,\n  policy:body.policy || \"\",\n  plan_type:body.plan_type || \"\",\n  status:\"submitted\"\n};\n\n\n// console.log(\"BODY =>\", body);\n\n// console.log(\"ENTITY =>\", policy);",
+        "functionName": "sd_uvNTbtMv1kugmsHA",
+        "category": "Function",
+        "x": 225,
+        "y": 280,
+        "wires": [
+            [
+                "sd_v79B2mlltMwHbhyF"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "getPolicy",
+        "generated": true
+    },
+    {
+        "id": "sd_v79B2mlltMwHbhyF",
+        "type": "insert",
+        "z": "SSD_SERVICE_ID_sd_KwPu3PF49Obf7td2",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "erd": "_DM_l5t26s97q",
+        "entityId": "_EN_9ctpcuh1k",
+        "_UI_entityName": "policy_applications",
+        "dbConfigId": "sd_nbkKdk1GxCrX8E0j",
+        "insertObject": "bh.local.policyPayload",
+        "resultMapping": "bh.local.response",
+        "functionName": "sd_v79B2mlltMwHbhyF",
+        "category": "Data Model",
+        "x": 385,
+        "y": 280,
+        "wires": [
+            [
+                "sd_3jVB3BCdvHCeyTHi"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "insertObject": {
+                "type": "bh.local",
+                "value": "policyPayload",
+                "constant": false
+            },
+            "resultMapping": {
+                "type": "bh.local",
+                "value": "response",
+                "nullable": "true",
+                "nullableValue": "",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "getPolicy",
+        "generated": true
+    },
+    {
+        "id": "sd_jWKc1AXA9LnXdkLM",
+        "type": "HttpIn",
+        "z": "SSD_SERVICE_ID_sd_KwPu3PF49Obf7td2",
+        "viewType": "server",
+        "nodeType": "start",
+        "name": "policySearch",
+        "path": "/policy/search",
+        "uploadpath": "",
+        "summary": "",
+        "description": "",
+        "method": "post",
+        "sequenceId": "",
+        "consumes": "",
+        "produces": "",
+        "filetype": "path",
+        "acceptFileUpload": false,
+        "useDataModel": false,
+        "dataModelIsArray": false,
+        "erd": "",
+        "erdName": "",
+        "entity": "",
+        "entityId": "",
+        "ref": "",
+        "editableListData": {
+            "responses": [],
+            "params": [],
+            "produces": [],
+            "consumes": [
+                {
+                    "key": "application/json",
+                    "rowId": "sd_GyDQleqIi5gcagze",
+                    "valid": true
+                }
+            ]
+        },
+        "inputs": 0,
+        "outputs": 1,
+        "validateRequestUsingSwaggerDocs": false,
+        "category": "HTTP",
+        "x": 65,
+        "y": 640,
+        "wires": [
+            [
+                "sd_1ibeVnCKAeDjRBac"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "uploadpath": {
+                "type": "str",
+                "value": "",
+                "nullable": "true",
+                "nullableValue": "",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "getPolicy",
+        "functionName": "sd_jWKc1AXA9LnXdkLM"
+    },
+    {
+        "id": "sd_1ibeVnCKAeDjRBac",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_KwPu3PF49Obf7td2",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "console.log(\"Search API Hit\");\n\n// console.log(\"Input =>\", bh.input);\n\n// const body =\n//   bh.input.body || {};\n\n// bh.local.application_id =\n//   body.application_id || \"\";\n\n// console.log(\n//   \"Searching Application ID =>\",\n//   bh.local.application_id\n// );\n\nbh.local.searchQuery = `\n  SELECT *\n  FROM policy_applications\n  WHERE application_id = '${bh.input.body.application_id}'\n`;\n\n\n",
+        "functionName": "sd_1ibeVnCKAeDjRBac",
+        "category": "Function",
+        "x": 225,
+        "y": 640,
+        "wires": [
+            [
+                "sd_2D7kLlo5FdTdN7s5"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "getPolicy",
+        "generated": true
+    },
+    {
+        "id": "sd_g1K4PibCfLZFeyIx",
+        "type": "find",
+        "z": "SSD_SERVICE_ID_sd_KwPu3PF49Obf7td2",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "erd": "_DM_l5t26s97q",
+        "entityId": "_EN_9ctpcuh1k",
+        "_UI_entityName": "policy_applications",
+        "dbConfigId": "sd_nbkKdk1GxCrX8E0j",
+        "primayKey": "id",
+        "operationType": "find",
+        "_ID": "bh.local.application_id",
+        "filterBy": "bh.input",
+        "offSet": "bh",
+        "orderBy": "bh",
+        "pageSize": "bh",
+        "resultMapping": "bh.local.searchResult",
+        "functionName": "sd_g1K4PibCfLZFeyIx",
+        "category": "Data Model",
+        "x": 1065,
+        "y": 480,
+        "wires": [
+            []
+        ],
+        "__ssdTypeInputs__": {
+            "_ID": {
+                "type": "bh.local",
+                "value": "application_id",
+                "constant": false
+            },
+            "filterBy": {
+                "type": "bh.input",
+                "value": "",
+                "constant": false
+            },
+            "offSet": {
+                "type": "bh",
+                "value": "",
+                "constant": false
+            },
+            "orderBy": {
+                "type": "bh",
+                "value": "",
+                "constant": false
+            },
+            "pageSize": {
+                "type": "bh",
+                "value": "",
+                "constant": false
+            },
+            "resultMapping": {
+                "type": "bh.local",
+                "value": "searchResult",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {
+            "_ID": true
+        },
+        "generateNext": true,
+        "serviceName": "getPolicy"
+    },
+    {
+        "id": "sd_5qmLad79g9kaKSe1",
+        "type": "HttpOut",
+        "z": "SSD_SERVICE_ID_sd_KwPu3PF49Obf7td2",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "headers": {},
+        "responseBody": {
+            "type": "bh.local",
+            "value": "policySearchDataResult",
+            "ssd_typedInputField": true
+        },
+        "httpcode": {
+            "type": "num",
+            "value": 200,
+            "ssd_typedInputField": true
+        },
+        "responseType": "obj",
+        "swaggerResponse": {},
+        "responseMapping": {
+            "status": 200,
+            "obj": "bh.local.policySearchDataResult",
+            "send": "bh.local.policySearchDataResult"
+        },
+        "dataModelIsArray": false,
+        "inputs": 1,
+        "outputs": 0,
+        "erd": "",
+        "entity": "",
+        "entityId": "",
+        "ref": "",
+        "editableListData": {
+            "headers": [],
+            "produces": [],
+            "responses": [
+                {
+                    "key": "policy searched sucessfully",
+                    "value": "200",
+                    "rowId": "sd_loH1fg8x64rix2a5",
+                    "valid": true
+                }
+            ]
+        },
+        "cookiesList": {},
+        "switchStates": {
+            "headers": "Map",
+            "cookies": "Map"
+        },
+        "functionName": "sd_5qmLad79g9kaKSe1",
+        "category": "HTTP",
+        "x": 665,
+        "y": 640,
+        "wires": [],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "getPolicy",
+        "generated": true
+    },
+    {
+        "id": "sd_HxFB0l0kcdSfxs8c",
+        "type": "HttpIn",
+        "z": "SSD_SERVICE_ID_sd_KwPu3PF49Obf7td2",
+        "viewType": "server",
+        "nodeType": "start",
+        "name": "policyDraft",
+        "path": "/policy/draft",
+        "uploadpath": "",
+        "summary": "",
+        "description": "",
+        "method": "post",
+        "sequenceId": "",
+        "consumes": "",
+        "produces": "",
+        "filetype": "path",
+        "acceptFileUpload": false,
+        "useDataModel": false,
+        "dataModelIsArray": false,
+        "erd": "",
+        "erdName": "",
+        "entity": "",
+        "entityId": "",
+        "ref": "",
+        "editableListData": {
+            "responses": [],
+            "params": [
+                {
+                    "key": "body",
+                    "desc": "policy creation payload",
+                    "type": "body",
+                    "required": false,
+                    "rowId": "sd_8sAboDmQ35ndujUu",
+                    "valid": true
+                }
+            ],
+            "produces": [],
+            "consumes": [
+                {
+                    "key": "application/json",
+                    "rowId": "sd_GyDQleqIi5gcagze",
+                    "valid": true
+                }
+            ]
+        },
+        "inputs": 0,
+        "outputs": 1,
+        "validateRequestUsingSwaggerDocs": false,
+        "category": "HTTP",
+        "x": 65,
+        "y": 520,
+        "wires": [
+            [
+                "sd_hXApaF11udSuJWKg"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "uploadpath": {
+                "type": "str",
+                "value": "",
+                "nullable": "true",
+                "nullableValue": "",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "getPolicy",
+        "functionName": "sd_HxFB0l0kcdSfxs8c"
+    },
+    {
+        "id": "sd_akooukC0nFUR1nhu",
+        "type": "HttpOut",
+        "z": "SSD_SERVICE_ID_sd_KwPu3PF49Obf7td2",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "headers": {},
+        "responseBody": {
+            "type": "bh",
+            "value": "response",
+            "ssd_typedInputField": true
+        },
+        "httpcode": {
+            "type": "num",
+            "value": 200,
+            "ssd_typedInputField": true
+        },
+        "responseType": "obj",
+        "swaggerResponse": {},
+        "responseMapping": {
+            "status": 200,
+            "obj": "bh.response",
+            "send": "bh.response"
+        },
+        "dataModelIsArray": false,
+        "inputs": 1,
+        "outputs": 0,
+        "erd": "",
+        "entity": "",
+        "entityId": "",
+        "ref": "",
+        "editableListData": {
+            "headers": [],
+            "produces": [],
+            "responses": [
+                {
+                    "key": "policy drafted sucessfully",
+                    "value": "200",
+                    "rowId": "sd_xxEBhk3O7dHHR0QX",
+                    "valid": true
+                }
+            ]
+        },
+        "cookiesList": {},
+        "switchStates": {
+            "headers": "Map",
+            "cookies": "Map"
+        },
+        "functionName": "sd_akooukC0nFUR1nhu",
+        "category": "HTTP",
+        "x": 665,
+        "y": 520,
+        "wires": [],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "getPolicy",
+        "generated": true
+    },
+    {
+        "id": "sd_hXApaF11udSuJWKg",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_KwPu3PF49Obf7td2",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "// bh.local.ticketData = {\n//     case_id: caseId,\n//     ticket_type: body.ticketType || \"Incident\",\n//     title: body.title || \"\",\n//     description: body.description || \"\",\n//     category: body.category || \"\",\n//     priority: body.priority || \"\",\n//     assignment_group: body.assignmentGroup || \"\",\n//     requester_name: body.requesterName || \"\",\n//     requester_email: body.requesterEmail || \"\",\n//     status: \"NEW\"\n// };\n// bh.local.policyPayload = {\n//    application_id:\n//     `APP-${Date.now()}`,\n//   fullname: bh.input.fullname || \"\",\n//   dob: body.formattedDob || \"\",\n//   gender: body.gender || \"\",\n//   age:body.age || \"\",\n//   mobile: body.mobile || \"\",\n//   address: body.address || \"\",\n//   base_premium: body.basePremium || \"\",\n//   discount_percentage: body.discountPercent || \"\",\n//   policy:body.selectedPolicyTerm,\n//   plan_type:body.selectedPlanType,\n//   status:\"submitted\"\n// };\nconsole.log(\"sgdshf\");\nconsole.log(\"test\",bh);\nconst body = bh.input.body || {};\nbh.local.policyPayload = {\n   application_id:\n    `APP-${Date.now()}`,\n  fullname: body.fullname || \"\",\n  dob: body.dob || null,\n  gender: body.gender || \"\",\n  email: body.email || \"\",\n  age:body.age || 0,\n  mobile: body.mobile || 0,\n  address: body.address || \"\",\n  base_premium: body.base_premium || 0,\n  discount_percentage: body.discount_percentage || 0,\n  final_premium:body.final_premium || 0,\n  medical_declaration:body.medical_declaration,\n  policy:body.policy || \"\",\n  plan_type:body.plan_type || \"\",\n  status:\"draft\"\n};\n\n\n// console.log(\"BODY =>\", body);\n\n// console.log(\"ENTITY =>\", policy);",
+        "functionName": "sd_hXApaF11udSuJWKg",
+        "category": "Function",
+        "x": 225,
+        "y": 520,
+        "wires": [
+            [
+                "sd_Wk4BFD1WUGMATDes"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "getPolicy",
+        "generated": true
+    },
+    {
+        "id": "sd_Wk4BFD1WUGMATDes",
+        "type": "insert",
+        "z": "SSD_SERVICE_ID_sd_KwPu3PF49Obf7td2",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "erd": "_DM_l5t26s97q",
+        "entityId": "_EN_9ctpcuh1k",
+        "_UI_entityName": "policy_applications",
+        "dbConfigId": "sd_nbkKdk1GxCrX8E0j",
+        "insertObject": "bh.local.policyPayload",
+        "resultMapping": "bh.local.response",
+        "functionName": "sd_Wk4BFD1WUGMATDes",
+        "category": "Data Model",
+        "x": 385,
+        "y": 520,
+        "wires": [
+            [
+                "sd_akooukC0nFUR1nhu"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "insertObject": {
+                "type": "bh.local",
+                "value": "policyPayload",
+                "constant": false
+            },
+            "resultMapping": {
+                "type": "bh.local",
+                "value": "response",
+                "nullable": "true",
+                "nullableValue": "",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "getPolicy",
+        "generated": true
+    },
+    {
+        "id": "sd_KJ1AU7CLwIICkPEa",
+        "type": "HttpIn",
+        "z": "SSD_SERVICE_ID_sd_KwPu3PF49Obf7td2",
+        "viewType": "server",
+        "nodeType": "start",
+        "name": "getDrafts",
+        "path": "/policy/getDrafts",
+        "uploadpath": "",
+        "summary": "",
+        "description": "",
+        "method": "get",
+        "sequenceId": "",
+        "consumes": "",
+        "produces": "",
+        "filetype": "path",
+        "acceptFileUpload": false,
+        "useDataModel": false,
+        "dataModelIsArray": false,
+        "erd": "",
+        "erdName": "",
+        "entity": "",
+        "entityId": "",
+        "ref": "",
+        "editableListData": {
+            "responses": [],
+            "params": [],
+            "produces": [],
+            "consumes": [
+                {
+                    "key": "application/json",
+                    "rowId": "sd_xFc8ZAYQG2xAJT3d",
+                    "valid": true
+                }
+            ]
+        },
+        "inputs": 0,
+        "outputs": 1,
+        "validateRequestUsingSwaggerDocs": false,
+        "category": "HTTP",
+        "x": 65,
+        "y": 800,
+        "wires": [
+            [
+                "sd_q6nzqe34nKzJckOR"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "uploadpath": {
+                "type": "str",
+                "value": "",
+                "nullable": "true",
+                "nullableValue": "",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "getPolicy",
+        "functionName": "sd_KJ1AU7CLwIICkPEa"
+    },
+    {
+        "id": "sd_2xRtMf4YHlDx43EQ",
+        "type": "HttpOut",
+        "z": "SSD_SERVICE_ID_sd_KwPu3PF49Obf7td2",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "headers": {},
+        "responseBody": {
+            "type": "bh.local",
+            "value": "draftApplications",
+            "ssd_typedInputField": true
+        },
+        "httpcode": {
+            "type": "num",
+            "value": 200,
+            "ssd_typedInputField": true
+        },
+        "responseType": "obj",
+        "swaggerResponse": {},
+        "responseMapping": {
+            "status": 200,
+            "obj": "bh.local.draftApplications",
+            "send": "bh.local.draftApplications"
+        },
+        "dataModelIsArray": false,
+        "inputs": 1,
+        "outputs": 0,
+        "erd": "",
+        "entity": "",
+        "entityId": "",
+        "ref": "",
+        "editableListData": {
+            "headers": [],
+            "produces": [],
+            "responses": [
+                {
+                    "key": "draft applicationfetched successfully",
+                    "value": "200",
+                    "rowId": "sd_oma85hrvv5YRswfu",
+                    "valid": true
+                }
+            ]
+        },
+        "cookiesList": {},
+        "switchStates": {
+            "headers": "Map",
+            "cookies": "Map"
+        },
+        "functionName": "sd_2xRtMf4YHlDx43EQ",
+        "category": "HTTP",
+        "x": 665,
+        "y": 800,
+        "wires": [],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "getPolicy",
+        "generated": true
+    },
+    {
+        "id": "sd_q6nzqe34nKzJckOR",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_KwPu3PF49Obf7td2",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "console.log(\"Draft API Hit\");\n\nbh.local.searchFilter = {\n\n  // status: \"draft\"\n\n};\n\nconsole.log(\n  \"Filter =>\",\n  bh.local.searchFilter\n);\n",
+        "functionName": "sd_q6nzqe34nKzJckOR",
+        "category": "Function",
+        "x": 225,
+        "y": 800,
+        "wires": [
+            [
+                "sd_Py0qbyTDef8lTiHX"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "getPolicy",
+        "generated": true
+    },
+    {
+        "id": "sd_Py0qbyTDef8lTiHX",
+        "type": "find",
+        "z": "SSD_SERVICE_ID_sd_KwPu3PF49Obf7td2",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "erd": "_DM_l5t26s97q",
+        "entityId": "_EN_9ctpcuh1k",
+        "_UI_entityName": "policy_applications",
+        "dbConfigId": "sd_nbkKdk1GxCrX8E0j",
+        "primayKey": "id",
+        "operationType": "find",
+        "_ID": "bh.local.application_id",
+        "filterBy": "bh.local.searchFilter",
+        "offSet": "bh",
+        "orderBy": "bh",
+        "pageSize": "bh",
+        "resultMapping": "bh.local.draftApplications",
+        "functionName": "sd_Py0qbyTDef8lTiHX",
+        "category": "Data Model",
+        "x": 385,
+        "y": 800,
+        "wires": [
+            [
+                "sd_sCXMW53crcq8LtBG"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "_ID": {
+                "type": "bh.local",
+                "value": "application_id",
+                "constant": false
+            },
+            "filterBy": {
+                "type": "bh.local",
+                "value": "searchFilter",
+                "constant": false
+            },
+            "offSet": {
+                "type": "bh",
+                "value": "",
+                "constant": false
+            },
+            "orderBy": {
+                "type": "bh",
+                "value": "",
+                "constant": false
+            },
+            "pageSize": {
+                "type": "bh",
+                "value": "",
+                "constant": false
+            },
+            "resultMapping": {
+                "type": "bh.local",
+                "value": "draftApplications",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {
+            "_ID": true
+        },
+        "generateNext": false,
+        "serviceName": "getPolicy",
+        "generated": true
+    },
+    {
+        "id": "sd_sCXMW53crcq8LtBG",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_KwPu3PF49Obf7td2",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "console.log(\n  \"AFTER FIND =>\",\n  bh.local.draftApplications\n);\n\n",
+        "functionName": "sd_sCXMW53crcq8LtBG",
+        "category": "Function",
+        "x": 525,
+        "y": 800,
+        "wires": [
+            [
+                "sd_2xRtMf4YHlDx43EQ"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "getPolicy",
+        "generated": true
+    },
+    {
+        "id": "sd_zv4lv5QMALfZ2p6W",
+        "type": "HttpIn",
+        "z": "SSD_SERVICE_ID_sd_KwPu3PF49Obf7td2",
+        "viewType": "server",
+        "nodeType": "start",
+        "name": "getPolicyByApplicationId",
+        "path": "/getPolicyByApplicationId",
+        "uploadpath": "",
+        "summary": "",
+        "description": "",
+        "method": "post",
+        "sequenceId": "",
+        "consumes": "",
+        "produces": "",
+        "filetype": "path",
+        "acceptFileUpload": false,
+        "useDataModel": false,
+        "dataModelIsArray": false,
+        "erd": "",
+        "erdName": "",
+        "entity": "",
+        "entityId": "",
+        "ref": "",
+        "editableListData": {
+            "responses": [],
+            "params": [],
+            "produces": [],
+            "consumes": [
+                {
+                    "key": "application/json",
+                    "rowId": "sd_YxvFdM1Orvadpi4D",
+                    "valid": true
+                }
+            ]
+        },
+        "inputs": 0,
+        "outputs": 1,
+        "validateRequestUsingSwaggerDocs": false,
+        "category": "HTTP",
+        "x": 65,
+        "y": 920,
+        "wires": [
+            [
+                "sd_gkETtYVETR9BGAtS"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "uploadpath": {
+                "type": "str",
+                "value": "",
+                "nullable": "true",
+                "nullableValue": "",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "getPolicy",
+        "functionName": "sd_zv4lv5QMALfZ2p6W"
+    },
+    {
+        "id": "sd_wcxajt6l3tkmomib",
+        "type": "ExecuteSql",
+        "z": "SSD_SERVICE_ID_sd_KwPu3PF49Obf7td2",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "databaseConfig": "sd_nbkKdk1GxCrX8E0j",
+        "resultMap": {
+            "type": "bh.local",
+            "value": "policyDataById"
+        },
+        "multipleQuery": "",
+        "singleQuery": {
+            "type": "bh.local",
+            "value": "searchQuery"
+        },
+        "inputs": 1,
+        "outputs": 1,
+        "params": [],
+        "dbType": "postgres",
+        "functionName": "sd_wcxajt6l3tkmomib",
+        "category": "Storage",
+        "x": 385,
+        "y": 920,
+        "wires": [
+            [
+                "sd_cc70NFxVhi6UbTVf"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "getPolicy",
+        "generated": true
+    },
+    {
+        "id": "sd_gkETtYVETR9BGAtS",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_KwPu3PF49Obf7td2",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "// bh.local.searchQuery = `\n// SELECT *\n// FROM policy_applications\n// WHERE application_id = '${bh.input.id}';\n// `;\n\nconsole.log(\"kjhskfhkdsjf \",bh)\nconsole.log(\"Received ID =>\", bh.input.body.id);\n\n\nbh.local.searchQuery = `\nSELECT *\nFROM policy_applications\nWHERE id = '${bh.input.body.id}'\n`;\n\n// console.log(\n//   bh.local.searchQuery\n// );\n\n\n",
+        "functionName": "sd_gkETtYVETR9BGAtS",
+        "category": "Function",
+        "x": 225,
+        "y": 920,
+        "wires": [
+            [
+                "sd_wcxajt6l3tkmomib"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "getPolicy",
+        "generated": true
+    },
+    {
+        "id": "sd_cc70NFxVhi6UbTVf",
+        "type": "HttpOut",
+        "z": "SSD_SERVICE_ID_sd_KwPu3PF49Obf7td2",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "headers": {},
+        "responseBody": {
+            "type": "bh.local",
+            "value": "policyDataById",
+            "ssd_typedInputField": true
+        },
+        "httpcode": {
+            "type": "num",
+            "value": 200,
+            "ssd_typedInputField": true
+        },
+        "responseType": "obj",
+        "swaggerResponse": {},
+        "responseMapping": {
+            "status": 200,
+            "obj": "bh.local.policyDataById",
+            "send": "bh.local.policyDataById"
+        },
+        "dataModelIsArray": false,
+        "inputs": 1,
+        "outputs": 0,
+        "erd": "",
+        "entity": "",
+        "entityId": "",
+        "ref": "",
+        "editableListData": {
+            "headers": [],
+            "produces": [],
+            "responses": [
+                {
+                    "key": "policyData fectched succesfully",
+                    "value": "200",
+                    "rowId": "sd_BLu7LQVSuOBoH0Ze",
+                    "valid": true
+                }
+            ]
+        },
+        "cookiesList": {},
+        "switchStates": {
+            "headers": "Map",
+            "cookies": "Map"
+        },
+        "functionName": "sd_cc70NFxVhi6UbTVf",
+        "category": "HTTP",
+        "x": 665,
+        "y": 920,
+        "wires": [],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "getPolicy",
+        "generated": true
+    },
+    {
+        "id": "sd_AaQko741ZilsNsLB",
+        "type": "HttpIn",
+        "z": "SSD_SERVICE_ID_sd_KwPu3PF49Obf7td2",
+        "viewType": "server",
+        "nodeType": "start",
+        "name": "policyUpdate",
+        "path": "/policy/update",
+        "uploadpath": "",
+        "summary": "",
+        "description": "",
+        "method": "post",
+        "sequenceId": "",
+        "consumes": "",
+        "produces": "",
+        "filetype": "path",
+        "acceptFileUpload": false,
+        "useDataModel": false,
+        "dataModelIsArray": false,
+        "erd": "",
+        "erdName": "",
+        "entity": "",
+        "entityId": "",
+        "ref": "",
+        "editableListData": {
+            "responses": [],
+            "params": [
+                {
+                    "key": "body",
+                    "desc": "policy creation payload",
+                    "type": "body",
+                    "required": false,
+                    "rowId": "sd_8sAboDmQ35ndujUu",
+                    "valid": true
+                }
+            ],
+            "produces": [],
+            "consumes": [
+                {
+                    "key": "application/json",
+                    "rowId": "sd_GyDQleqIi5gcagze",
+                    "valid": true
+                }
+            ]
+        },
+        "inputs": 0,
+        "outputs": 1,
+        "validateRequestUsingSwaggerDocs": false,
+        "category": "HTTP",
+        "x": 65,
+        "y": 380,
+        "wires": [
+            [
+                "sd_46vzy6MOEKDaG5rv"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "uploadpath": {
+                "type": "str",
+                "value": "",
+                "nullable": "true",
+                "nullableValue": "",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "getPolicy",
+        "functionName": "sd_AaQko741ZilsNsLB"
+    },
+    {
+        "id": "sd_TsGw2fl1tx318o98",
+        "type": "HttpOut",
+        "z": "SSD_SERVICE_ID_sd_KwPu3PF49Obf7td2",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "headers": {},
+        "responseBody": {
+            "type": "bh",
+            "value": "response",
+            "ssd_typedInputField": true
+        },
+        "httpcode": {
+            "type": "num",
+            "value": 200,
+            "ssd_typedInputField": true
+        },
+        "responseType": "obj",
+        "swaggerResponse": {},
+        "responseMapping": {
+            "status": 200,
+            "obj": "bh.response",
+            "send": "bh.response"
+        },
+        "dataModelIsArray": false,
+        "inputs": 1,
+        "outputs": 0,
+        "erd": "",
+        "entity": "",
+        "entityId": "",
+        "ref": "",
+        "editableListData": {
+            "headers": [],
+            "produces": [],
+            "responses": [
+                {
+                    "key": "policy Updated sucessfully",
+                    "value": "200",
+                    "rowId": "sd_xxEBhk3O7dHHR0QX",
+                    "valid": true
+                }
+            ]
+        },
+        "cookiesList": {},
+        "switchStates": {
+            "headers": "Map",
+            "cookies": "Map"
+        },
+        "functionName": "sd_TsGw2fl1tx318o98",
+        "category": "HTTP",
+        "x": 665,
+        "y": 380,
+        "wires": [],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "getPolicy",
+        "generated": true
+    },
+    {
+        "id": "sd_UwyOndAPOlhfGe0h",
+        "type": "ExecuteSql",
+        "z": "SSD_SERVICE_ID_sd_KwPu3PF49Obf7td2",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "databaseConfig": "sd_nbkKdk1GxCrX8E0j",
+        "resultMap": {
+            "type": "bh.local",
+            "value": "response"
+        },
+        "multipleQuery": "",
+        "singleQuery": {
+            "type": "bh.local",
+            "value": "updateQuery"
+        },
+        "inputs": 1,
+        "outputs": 1,
+        "params": [],
+        "dbType": "postgres",
+        "functionName": "sd_UwyOndAPOlhfGe0h",
+        "category": "Storage",
+        "x": 385,
+        "y": 380,
+        "wires": [
+            [
+                "sd_TsGw2fl1tx318o98"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "getPolicy",
+        "generated": true
+    },
+    {
+        "id": "sd_46vzy6MOEKDaG5rv",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_KwPu3PF49Obf7td2",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "const body = bh.input.body || {};\nbh.local.updateQuery = `\nUPDATE policy_applications\nSET\n    application_id = '${body.application_id}',\n    fullname = '${body.fullname}',\n    dob = '${body.dob}',\n    gender = '${body.gender}',\n    email = '${body.email}',\n    age = '${body.age}',\n    mobile = '${body.mobile}',\n    address = '${body.address}',\n    base_premium = '${body.base_premium}',\n    discount_percentage = '${body.discount_percentage}',\n    final_premium = '${body.final_premium}',\n    medical_declaration='${JSON.stringify(body.medical_declaration)}',\n    policy = '${body.policy}',\n    plan_type = '${body.plan_type}',\n    status = 'submitted'\nWHERE id = '${body.id}'\nRETURNING *;\n`;\n\nconsole.log(bh.local.updateQuery);\n\nconsole.log(\"bh in back end apicall\",bh);\n",
+        "functionName": "sd_46vzy6MOEKDaG5rv",
+        "category": "Function",
+        "x": 225,
+        "y": 380,
+        "wires": [
+            [
+                "sd_UwyOndAPOlhfGe0h"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "getPolicy",
+        "generated": true
+    },
+    {
+        "id": "sd_3jVB3BCdvHCeyTHi",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_KwPu3PF49Obf7td2",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "Alpha payload ",
+        "script": "bh.local.response = {\n    success: true,\n    message: \"Application  submitted successfully\",\n    caseId: bh.local.policyPayload.application_id,\n    data: {\n        caseId: bh.local.policyPayload.application_id,\n        ticket_type: bh.local.policyPayload.ticket_type,\n        fullname: bh.local.policyPayload.fullname || \"\",\n        dob: bh.local.policyPayload.dob || null,\n        gender: bh.local.policyPayload.gender || \"\",\n        email: bh.local.policyPayload.email || \"\",\n        age:bh.local.policyPayload.age || 0,\n        mobile: bh.local.policyPayload.mobile || 0,\n        address: bh.local.policyPayload.address || \"\",\n        base_premium: bh.local.policyPayload.base_premium || 0,\n        discount_percentage: bh.local.policyPayload.discount_percentage || 0,\n        final_premium:bh.local.policyPayload.final_premium || 0,\n        medical_declaration:bh.local.policyPayload.medical_declaration,\n        policy:bh.local.policyPayload.policy || \"\",\n        plan_type:bh.local.policyPayload.plan_type || \"\",\n        status: bh.local.policyPayload.status\n    }\n};\n\n// This payload will be passed to Alpha workflow\nbh.local.alphaPayload = {\n    caseType: \"subha-health-poc\",\n    caseData: {\n    caseId: bh.local.policyPayload.application_id,\n    ticket_type: bh.local.policyPayload.ticket_type,\n    fullname: bh.local.policyPayload.fullname || \"\",\n    dob: bh.local.policyPayload.dob || null,\n    gender: bh.local.policyPayload.gender || \"\",\n    email: bh.local.policyPayload.email || \"\",\n    age:bh.local.policyPayload.age || 0,\n    mobile: bh.local.policyPayload.mobile || 0,\n    address: bh.local.policyPayload.address || \"\",\n    base_premium: bh.local.policyPayload.base_premium || 0,\n    discount_percentage: bh.local.policyPayload.discount_percentage || 0,\n    final_premium:bh.local.policyPayload.final_premium || 0,\n    medical_declaration:bh.local.policyPayload.medical_declaration,\n    policy:bh.local.policyPayload.policy || \"\",\n    plan_type:bh.local.policyPayload.plan_type || \"\",\n    status: bh.local.policyPayload.status\n    }\n};\nbh.local.tokenpayload={\n    \"client_secret\":\"e28WZR6ZKyrYILTSKKClFEwNlYoGR2cvISwFCoIXP4S7DJgsaqhHRSNqpoWgYbcx_DUlrSkoA1zS5uFOzP-J9C\",\n    \"client_id\":\"0ddh_euTKkSA682Yy5HuC\",\n    \"grant_type\":\"client_credentials\"\n}\nconsole.log(\"Alpha payload:\", bh.local.alphaPayload);",
+        "functionName": "alphaPayload",
+        "category": "Function",
+        "x": 525,
+        "y": 280,
+        "wires": [
+            [
+                "sd_RJb21pIVTG3eyy9A"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "getPolicy",
+        "generated": true
+    },
+    {
+        "id": "sd_RJb21pIVTG3eyy9A",
+        "type": "ServerHttpRequest",
+        "z": "SSD_SERVICE_ID_sd_KwPu3PF49Obf7td2",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "Token Api",
+        "method": "post",
+        "methodMappingObj": {},
+        "urlMapping": "\"https://ids-ctr-pt.neutrinos-apps.com/token\"",
+        "urlMappingObj": {
+            "mapVarType": "str",
+            "mapVarValue": "https://ids-ctr-pt.neutrinos-apps.com/token"
+        },
+        "ret": "json",
+        "retMappingObj": {},
+        "reqBody": "bh.local.tokenpayload",
+        "reqBodyObj": {
+            "mapVarType": "bh.local",
+            "mapVarValue": "tokenpayload"
+        },
+        "resultMapping": "bh.local.token",
+        "resultMappingObj": {
+            "mapVarType": "bh.local",
+            "mapVarValue": "token"
+        },
+        "headers": {
+            "Content-Type": "application/x-www-form-urlencoded"
+        },
+        "headersObj": [
+            {
+                "key": "Content-Type",
+                "defaultValue": "application/x-www-form-urlencoded"
+            }
+        ],
+        "headerMappingObj": {},
+        "params": {},
+        "paramsObj": [],
+        "paramMappingObj": {},
+        "useAuthTypeMappingObj": {},
+        "useAuthUsername": "",
+        "useAuthUsernameMappingObj": "",
+        "useAuthPassword": "",
+        "useAuthPasswordMappingObj": "",
+        "useAuthToken": "",
+        "useAuthTokenMappingObj": "",
+        "useQueryString": false,
+        "tls": "",
+        "followRedirect": true,
+        "paytoqs": false,
+        "useAuthentication": false,
+        "rejectUnauthorized": false,
+        "proxy": "",
+        "useProxy": false,
+        "usetls": false,
+        "cookiesMapObj": {},
+        "cookiesList": {},
+        "switchStates": {
+            "cookies": "Map"
+        },
+        "editableListData": {},
+        "timeout": {
+            "type": "num",
+            "value": ""
+        },
+        "functionName": "tokenApi",
+        "category": "HTTP",
+        "x": 665,
+        "y": 280,
+        "wires": [
+            [
+                "sd_nLrVVjwQq8pXTm8k"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "getPolicy",
+        "generated": true
+    },
+    {
+        "id": "sd_nLrVVjwQq8pXTm8k",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_KwPu3PF49Obf7td2",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "Token",
+        "script": "\nconsole.log(\":::::::::token::::::::\",bh.local.token)\nbh.local.authHeader =  bh.local.token.payload.access_token\nconsole.log(\":::::::::token11::::::::\",bh.local.authHeader)",
+        "functionName": "token",
+        "category": "Function",
+        "x": 785,
+        "y": 280,
+        "wires": [
+            [
+                "sd_8A92ELENUicUWIR3"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "getPolicy",
+        "generated": true
+    },
+    {
+        "id": "sd_8A92ELENUicUWIR3",
+        "type": "ServerHttpRequest",
+        "z": "SSD_SERVICE_ID_sd_KwPu3PF49Obf7td2",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "Case creation",
+        "method": "post",
+        "methodMappingObj": {},
+        "urlMapping": "\"https://alpha-pt.neutrinos-apps.com/caseservice/case/instance/create\"",
+        "urlMappingObj": {
+            "mapVarType": "str",
+            "mapVarValue": "https://alpha-pt.neutrinos-apps.com/caseservice/case/instance/create"
+        },
+        "ret": "json",
+        "retMappingObj": {},
+        "reqBody": "bh.local.alphaPayload",
+        "reqBodyObj": {
+            "mapVarType": "bh.local",
+            "mapVarValue": "alphaPayload"
+        },
+        "resultMapping": "bh.local.alpharesponse",
+        "resultMappingObj": {
+            "mapVarType": "bh.local",
+            "mapVarValue": "alpharesponse"
+        },
+        "headers": {
+            "accept": "application/json",
+            "Content-Type": "application/json"
+        },
+        "headersObj": [
+            {
+                "key": "accept",
+                "defaultValue": "application/json"
+            },
+            {
+                "key": "Content-Type",
+                "defaultValue": "application/json"
+            }
+        ],
+        "headerMappingObj": {},
+        "params": {},
+        "paramsObj": [],
+        "paramMappingObj": {},
+        "authType": "bearer",
+        "useAuthUsername": "",
+        "useAuthUsernameMappingObj": {},
+        "useAuthPassword": "",
+        "useAuthPasswordMappingObj": {},
+        "useAuthToken": "bh.local.authHeader",
+        "useAuthTokenMappingObj": {
+            "mapVarType": "bh.local",
+            "mapVarValue": "authHeader"
+        },
+        "useQueryString": false,
+        "tls": "",
+        "followRedirect": true,
+        "paytoqs": false,
+        "useAuthentication": true,
+        "rejectUnauthorized": false,
+        "proxy": "",
+        "useProxy": false,
+        "usetls": false,
+        "cookiesMapObj": {},
+        "cookiesList": {},
+        "switchStates": {
+            "cookies": "Map"
+        },
+        "editableListData": {},
+        "timeout": {
+            "type": "num",
+            "value": ""
+        },
+        "functionName": "caseCreation",
+        "category": "HTTP",
+        "x": 905,
+        "y": 280,
+        "wires": [
+            [
+                "sd_sx7a5Afb4lljXzAF"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "getPolicy",
+        "generated": true
+    },
+    {
+        "id": "sd_sx7a5Afb4lljXzAF",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_KwPu3PF49Obf7td2",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.local.allresponse = {\n \"ticket\" : bh.local.response,\n \"case-creation\":bh.local.alpharesponse,\n//  \"auto-assign\":bh.local.result\n}",
+        "functionName": "sd_sx7a5Afb4lljXzAF",
+        "category": "Function",
+        "x": 1020,
+        "y": 280,
+        "wires": [
+            [
+                "sd_Fk9Wf6nmiuBExBxp"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "getPolicy",
+        "generated": true
+    },
+    {
+        "id": "sd_dBFwlqvIjFNKWkEH",
+        "type": "HttpIn",
+        "z": "SSD_SERVICE_ID_sd_KwPu3PF49Obf7td2",
+        "viewType": "server",
+        "nodeType": "start",
+        "name": "searchOnePolicy",
+        "path": "/searchOnePolicy",
+        "uploadpath": "",
+        "summary": "",
+        "description": "",
+        "method": "post",
+        "sequenceId": "",
+        "consumes": "",
+        "produces": "",
+        "filetype": "path",
+        "acceptFileUpload": false,
+        "useDataModel": false,
+        "dataModelIsArray": false,
+        "erd": "",
+        "erdName": "",
+        "entity": "",
+        "entityId": "",
+        "ref": "",
+        "editableListData": {
+            "responses": [],
+            "params": [],
+            "produces": [],
+            "consumes": [
+                {
+                    "key": "application/json",
+                    "rowId": "sd_YxvFdM1Orvadpi4D",
+                    "valid": true
+                }
+            ]
+        },
+        "inputs": 0,
+        "outputs": 1,
+        "validateRequestUsingSwaggerDocs": false,
+        "category": "HTTP",
+        "x": 65,
+        "y": 1040,
+        "wires": [
+            [
+                "sd_sNvh7GTu2GwIZPEw"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "uploadpath": {
+                "type": "str",
+                "value": "",
+                "nullable": "true",
+                "nullableValue": "",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "getPolicy",
+        "functionName": "sd_dBFwlqvIjFNKWkEH"
+    },
+    {
+        "id": "sd_aYjA3WCcv3aIkmEY",
+        "type": "ExecuteSql",
+        "z": "SSD_SERVICE_ID_sd_KwPu3PF49Obf7td2",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "databaseConfig": "sd_nbkKdk1GxCrX8E0j",
+        "resultMap": {
+            "type": "bh.local",
+            "value": "policyDataById"
+        },
+        "multipleQuery": "",
+        "singleQuery": {
+            "type": "bh.local",
+            "value": "searchQuery"
+        },
+        "inputs": 1,
+        "outputs": 1,
+        "params": [],
+        "dbType": "postgres",
+        "functionName": "sd_aYjA3WCcv3aIkmEY",
+        "category": "Storage",
+        "x": 385,
+        "y": 1040,
+        "wires": [
+            [
+                "sd_A4MzDqvk0qaux55c"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "getPolicy",
+        "generated": true
+    },
+    {
+        "id": "sd_sNvh7GTu2GwIZPEw",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_KwPu3PF49Obf7td2",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "// bh.local.searchQuery = `\n// SELECT *\n// FROM policy_applications\n// WHERE application_id = '${bh.input.id}';\n// `;\n\n// console.log(\"kjhskfhkdsjf \",bh)\n// console.log(\"Received ID =>\", bh.input.body.id);\n\n\nbh.local.searchQuery = `\nSELECT *\nFROM policy_applications\nWHERE application_id = '${bh.input.body.application_id}'\n`;\n\n// console.log(\n//   bh.local.searchQuery\n// );\n\n\n",
+        "functionName": "sd_sNvh7GTu2GwIZPEw",
+        "category": "Function",
+        "x": 225,
+        "y": 1040,
+        "wires": [
+            [
+                "sd_aYjA3WCcv3aIkmEY"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "getPolicy",
+        "generated": true
+    },
+    {
+        "id": "sd_A4MzDqvk0qaux55c",
+        "type": "HttpOut",
+        "z": "SSD_SERVICE_ID_sd_KwPu3PF49Obf7td2",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "headers": {},
+        "responseBody": {
+            "type": "bh.local",
+            "value": "policyDataById",
+            "ssd_typedInputField": true
+        },
+        "httpcode": {
+            "type": "num",
+            "value": 200,
+            "ssd_typedInputField": true
+        },
+        "responseType": "obj",
+        "swaggerResponse": {},
+        "responseMapping": {
+            "status": 200,
+            "obj": "bh.local.policyDataById",
+            "send": "bh.local.policyDataById"
+        },
+        "dataModelIsArray": false,
+        "cookies": [],
+        "inputs": 1,
+        "outputs": 0,
+        "erd": "",
+        "entity": "",
+        "entityId": "",
+        "ref": "",
+        "editableListData": {
+            "headers": [],
+            "produces": [],
+            "responses": [
+                {
+                    "key": "policyData fectched succesfully",
+                    "value": "200",
+                    "rowId": "sd_BLu7LQVSuOBoH0Ze",
+                    "valid": true
+                }
+            ]
+        },
+        "cookiesList": {},
+        "switchStates": {
+            "headers": "Map",
+            "cookies": "Map"
+        },
+        "functionName": "sd_A4MzDqvk0qaux55c",
+        "category": "HTTP",
+        "x": 665,
+        "y": 1040,
+        "wires": [],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "getPolicy",
+        "generated": true
+    },
+    {
+        "id": "sd_2D7kLlo5FdTdN7s5",
+        "type": "ExecuteSql",
+        "z": "SSD_SERVICE_ID_sd_KwPu3PF49Obf7td2",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "databaseConfig": "sd_nbkKdk1GxCrX8E0j",
+        "resultMap": {
+            "type": "bh.local",
+            "value": "policySearchDataResult"
+        },
+        "multipleQuery": "",
+        "singleQuery": {
+            "type": "bh.local",
+            "value": "searchQuery"
+        },
+        "inputs": 1,
+        "outputs": 1,
+        "params": [],
+        "dbType": "postgres",
+        "functionName": "sd_2D7kLlo5FdTdN7s5",
+        "category": "Storage",
+        "x": 420,
+        "y": 640,
+        "wires": [
+            [
+                "sd_5qmLad79g9kaKSe1"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "getPolicy",
+        "generated": true
+    },
+    {
+        "id": "sd_CBffBcLBXVe0aUtR",
+        "type": "HttpIn",
+        "z": "SSD_SERVICE_ID_sd_KwPu3PF49Obf7td2",
+        "viewType": "server",
+        "nodeType": "start",
+        "name": "policySubmit",
+        "path": "/policy/submit",
+        "uploadpath": "",
+        "summary": "",
+        "description": "",
+        "method": "post",
+        "sequenceId": "",
+        "consumes": "",
+        "produces": "",
+        "filetype": "path",
+        "acceptFileUpload": false,
+        "useDataModel": false,
+        "dataModelIsArray": false,
+        "erd": "",
+        "erdName": "",
+        "entity": "",
+        "entityId": "",
+        "ref": "",
+        "editableListData": {
+            "responses": [],
+            "params": [
+                {
+                    "key": "body",
+                    "desc": "policy creation payload",
+                    "type": "body",
+                    "required": false,
+                    "rowId": "sd_8sAboDmQ35ndujUu",
+                    "valid": true
+                }
+            ],
+            "produces": [],
+            "consumes": [
+                {
+                    "key": "application/json",
+                    "rowId": "sd_GyDQleqIi5gcagze",
+                    "valid": true
+                }
+            ]
+        },
+        "inputs": 0,
+        "outputs": 1,
+        "validateRequestUsingSwaggerDocs": false,
+        "category": "HTTP",
+        "x": 65,
+        "y": 200,
+        "wires": [
+            [
+                "sd_S7KpNOI3nzHTizfe"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "uploadpath": {
+                "type": "str",
+                "value": "",
+                "nullable": "true",
+                "nullableValue": "",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "getPolicy",
+        "functionName": "sd_CBffBcLBXVe0aUtR"
+    },
+    {
+        "id": "sd_S7KpNOI3nzHTizfe",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_KwPu3PF49Obf7td2",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "// bh.local.ticketData = {\n//     case_id: caseId,\n//     ticket_type: body.ticketType || \"Incident\",\n//     title: body.title || \"\",\n//     description: body.description || \"\",\n//     category: body.category || \"\",\n//     priority: body.priority || \"\",\n//     assignment_group: body.assignmentGroup || \"\",\n//     requester_name: body.requesterName || \"\",\n//     requester_email: body.requesterEmail || \"\",\n//     status: \"NEW\"\n// };\n// bh.local.policyPayload = {\n//    application_id:\n//     `APP-${Date.now()}`,\n//   fullname: bh.input.fullname || \"\",\n//   dob: body.formattedDob || \"\",\n//   gender: body.gender || \"\",\n//   age:body.age || \"\",\n//   mobile: body.mobile || \"\",\n//   address: body.address || \"\",\n//   base_premium: body.basePremium || \"\",\n//   discount_percentage: body.discountPercent || \"\",\n//   policy:body.selectedPolicyTerm,\n//   plan_type:body.selectedPlanType,\n//   status:\"submitted\"\n// };\n\n// console.log(\"test\",bh);\nconst body = bh.input.body || {};\nbh.local.policyPayload = {\n   application_id:\n    `APP-${Date.now()}`,\n  ticket_type: body.ticket_type,\n  fullname: body.fullname || \"\",\n  dob: body.dob || null,\n  gender: body.gender || \"\",\n  email: body.email || \"\",\n  age:body.age || 0,\n  mobile: body.mobile || 0,\n  address: body.address || \"\",\n  base_premium: body.base_premium || 0,\n  discount_percentage: body.discount_percentage || 0,\n  final_premium:body.final_premium || 0,\n  medical_declaration:body.medical_declaration,\n  policy:body.policy || \"\",\n  plan_type:body.plan_type || \"\",\n  status:\"submitted\"\n};\n\n\n// console.log(\"BODY =>\", body);\n\n// console.log(\"ENTITY =>\", policy);",
+        "functionName": "sd_S7KpNOI3nzHTizfe",
+        "category": "Function",
+        "x": 205,
+        "y": 180,
+        "wires": [
+            [
+                "sd_v4UwAoFunZ0Djc41"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "getPolicy",
+        "generated": true
+    },
+    {
+        "id": "sd_v4UwAoFunZ0Djc41",
+        "type": "insert",
+        "z": "SSD_SERVICE_ID_sd_KwPu3PF49Obf7td2",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "erd": "_DM_l5t26s97q",
+        "entityId": "_EN_9ctpcuh1k",
+        "_UI_entityName": "policy_applications",
+        "dbConfigId": "sd_nbkKdk1GxCrX8E0j",
+        "insertObject": "bh.local.policyPayload",
+        "resultMapping": "bh.local.response",
+        "functionName": "sd_v4UwAoFunZ0Djc41",
+        "category": "Data Model",
+        "x": 365,
+        "y": 180,
+        "wires": [
+            [
+                "sd_sXHk57R1nsWxch6a"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "insertObject": {
+                "type": "bh.local",
+                "value": "policyPayload",
+                "constant": false
+            },
+            "resultMapping": {
+                "type": "bh.local",
+                "value": "response",
+                "nullable": "true",
+                "nullableValue": "",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "getPolicy",
+        "generated": true
+    },
+    {
+        "id": "sd_sXHk57R1nsWxch6a",
+        "type": "HttpOut",
+        "z": "SSD_SERVICE_ID_sd_KwPu3PF49Obf7td2",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "headers": {},
+        "responseBody": {
+            "type": "bh",
+            "value": "response",
+            "ssd_typedInputField": true
+        },
+        "httpcode": {
+            "type": "num",
+            "value": 200,
+            "ssd_typedInputField": true
+        },
+        "responseType": "obj",
+        "swaggerResponse": {},
+        "responseMapping": {
+            "status": 200,
+            "obj": "bh.response",
+            "send": "bh.response"
+        },
+        "dataModelIsArray": false,
+        "cookies": [],
+        "inputs": 1,
+        "outputs": 0,
+        "erd": "",
+        "entity": "",
+        "entityId": "",
+        "ref": "",
+        "editableListData": {
+            "headers": [],
+            "produces": [],
+            "responses": [
+                {
+                    "key": "policy submitted sucessfully",
+                    "value": "200",
+                    "rowId": "sd_xxEBhk3O7dHHR0QX",
+                    "valid": true
+                }
+            ]
+        },
+        "cookiesList": {},
+        "switchStates": {
+            "headers": "Map",
+            "cookies": "Map"
+        },
+        "functionName": "sd_sXHk57R1nsWxch6a",
+        "category": "HTTP",
+        "x": 525,
+        "y": 180,
+        "wires": [],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "getPolicy",
+        "generated": true
+    }
+]

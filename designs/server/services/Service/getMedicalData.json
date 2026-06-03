@@ -1,0 +1,222 @@
+[
+    {
+        "id": "SSD_SERVICE_ID_sd_AnxDMDixIV6ymVA2",
+        "type": "tab",
+        "createdDate": "2026-05-25T18:57:22.725Z",
+        "label": "getMedicalData",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "getMedicalData",
+        "relativeParentPath": "Service"
+    },
+    {
+        "id": "sd_BjKHZ2zXctTbzFMi",
+        "type": "HttpIn",
+        "z": "SSD_SERVICE_ID_sd_AnxDMDixIV6ymVA2",
+        "viewType": "server",
+        "nodeType": "start",
+        "name": "",
+        "path": "/getMedicalData",
+        "uploadpath": "",
+        "summary": "",
+        "description": "",
+        "method": "post",
+        "sequenceId": "",
+        "consumes": "",
+        "produces": "",
+        "filetype": "path",
+        "acceptFileUpload": false,
+        "useDataModel": false,
+        "dataModelIsArray": false,
+        "erd": "",
+        "erdName": "",
+        "entity": "",
+        "entityId": "",
+        "ref": "",
+        "editableListData": {
+            "responses": [],
+            "params": [],
+            "produces": [],
+            "consumes": []
+        },
+        "inputs": 0,
+        "outputs": 1,
+        "validateRequestUsingSwaggerDocs": false,
+        "category": "HTTP",
+        "x": 165,
+        "y": 220,
+        "wires": [
+            [
+                "sd_K2mlYVZabHS2sxBu"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "uploadpath": {
+                "type": "str",
+                "value": "",
+                "nullable": "true",
+                "nullableValue": "",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "getMedicalData",
+        "functionName": "sd_BjKHZ2zXctTbzFMi"
+    },
+    {
+        "id": "sd_J6NMfndzYuRCFDwx",
+        "type": "HttpOut",
+        "z": "SSD_SERVICE_ID_sd_AnxDMDixIV6ymVA2",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "headers": {},
+        "responseBody": {
+            "type": "bh.local",
+            "value": "result",
+            "ssd_typedInputField": true
+        },
+        "httpcode": {
+            "type": "num",
+            "value": 200,
+            "ssd_typedInputField": true
+        },
+        "responseType": "obj",
+        "swaggerResponse": {},
+        "responseMapping": {
+            "status": 200,
+            "obj": "bh.local.result",
+            "send": "bh.local.result"
+        },
+        "dataModelIsArray": false,
+        "inputs": 1,
+        "outputs": 0,
+        "erd": "",
+        "entity": "",
+        "entityId": "",
+        "ref": "",
+        "editableListData": {
+            "headers": [],
+            "produces": [],
+            "responses": []
+        },
+        "cookiesList": {},
+        "switchStates": {
+            "headers": "Map",
+            "cookies": "Map"
+        },
+        "functionName": "sd_J6NMfndzYuRCFDwx",
+        "category": "HTTP",
+        "x": 625,
+        "y": 220,
+        "wires": [],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "getMedicalData",
+        "generated": true
+    },
+    {
+        "id": "sd_K2mlYVZabHS2sxBu",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_AnxDMDixIV6ymVA2",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.local.payload = {\n  \"pageNumber\": 0,\n  \"pageSize\": 10,\n  \"multiplicity\": \"multiple\",\n  \"filter\": {\n   \n  }\n}",
+        "functionName": "sd_K2mlYVZabHS2sxBu",
+        "category": "Function",
+        "x": 325,
+        "y": 220,
+        "wires": [
+            [
+                "sd_C8fUYEVcA1q6CUvD"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "getMedicalData",
+        "generated": true
+    },
+    {
+        "id": "sd_C8fUYEVcA1q6CUvD",
+        "type": "ServerHttpRequest",
+        "z": "SSD_SERVICE_ID_sd_AnxDMDixIV6ymVA2",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "method": "post",
+        "methodMappingObj": {},
+        "urlMapping": "\"https://reels-pt.neutrinos-apps.com/integration/api/records/filter/72b58c39-817f-4204-95dc-4f5eec8fd929/9dc1b997-15b7-42ab-93e6-2f6c91d2bae7/fe62755d-259e-47ab-b72d-378e5787d5ac\"",
+        "urlMappingObj": {
+            "mapVarType": "str",
+            "mapVarValue": "https://reels-pt.neutrinos-apps.com/integration/api/records/filter/72b58c39-817f-4204-95dc-4f5eec8fd929/9dc1b997-15b7-42ab-93e6-2f6c91d2bae7/fe62755d-259e-47ab-b72d-378e5787d5ac"
+        },
+        "ret": "json",
+        "retMappingObj": {},
+        "reqBody": "bh.local.payload",
+        "reqBodyObj": {
+            "mapVarType": "bh.local",
+            "mapVarValue": "payload"
+        },
+        "resultMapping": "bh.local.result",
+        "resultMappingObj": {
+            "mapVarType": "bh.local",
+            "mapVarValue": "result"
+        },
+        "headers": {
+            "token": "d674bdf6-0554-42a8-ae27-264befe13c23.ceee41185aba511f29d2c85a1471a03eaf828eda0dc42f8b914c384051f8c46f"
+        },
+        "headersObj": [
+            {
+                "key": "token",
+                "defaultValue": "d674bdf6-0554-42a8-ae27-264befe13c23.ceee41185aba511f29d2c85a1471a03eaf828eda0dc42f8b914c384051f8c46f"
+            }
+        ],
+        "headerMappingObj": {},
+        "params": {},
+        "paramsObj": [],
+        "paramMappingObj": {},
+        "useAuthTypeMappingObj": {},
+        "useAuthUsername": "",
+        "useAuthUsernameMappingObj": "",
+        "useAuthPassword": "",
+        "useAuthPasswordMappingObj": "",
+        "useAuthToken": "",
+        "useAuthTokenMappingObj": "",
+        "useQueryString": false,
+        "tls": "",
+        "followRedirect": true,
+        "paytoqs": false,
+        "useAuthentication": false,
+        "rejectUnauthorized": false,
+        "proxy": "",
+        "useProxy": false,
+        "usetls": false,
+        "cookiesMapObj": {},
+        "cookiesList": {},
+        "switchStates": {
+            "cookies": "Map"
+        },
+        "editableListData": {},
+        "timeout": {
+            "type": "num",
+            "value": ""
+        },
+        "functionName": "sd_C8fUYEVcA1q6CUvD",
+        "category": "HTTP",
+        "x": 465,
+        "y": 220,
+        "wires": [
+            [
+                "sd_J6NMfndzYuRCFDwx"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "getMedicalData",
+        "generated": true
+    }
+]
