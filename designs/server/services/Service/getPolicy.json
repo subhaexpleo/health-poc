@@ -30,6 +30,7 @@
         "acceptFileUpload": false,
         "useDataModel": false,
         "dataModelIsArray": false,
+        "uploadFileOptions": "",
         "erd": "",
         "erdName": "",
         "entity": "",
@@ -92,6 +93,7 @@
             "send": "bh.local.result"
         },
         "dataModelIsArray": false,
+        "cookies": [],
         "inputs": 1,
         "outputs": 0,
         "erd": "",
@@ -148,6 +150,7 @@
         "nodeType": "flow",
         "name": "",
         "method": "post",
+        "methodMapping": "",
         "methodMappingObj": {},
         "urlMapping": "\"https://reels-pt.neutrinos-apps.com/integration/api/records/filter/72b58c39-817f-4204-95dc-4f5eec8fd929/02deac5e-69f8-4359-acd3-143f13b92b6f/63c03bbc-3038-47aa-87f3-28f737019de1\"",
         "urlMappingObj": {
@@ -155,6 +158,7 @@
             "mapVarValue": "https://reels-pt.neutrinos-apps.com/integration/api/records/filter/72b58c39-817f-4204-95dc-4f5eec8fd929/02deac5e-69f8-4359-acd3-143f13b92b6f/63c03bbc-3038-47aa-87f3-28f737019de1"
         },
         "ret": "json",
+        "retMapping": "",
         "retMappingObj": {},
         "reqBody": "bh.local.payload",
         "reqBodyObj": {
@@ -175,11 +179,16 @@
                 "defaultValue": "d674bdf6-0554-42a8-ae27-264befe13c23.ceee41185aba511f29d2c85a1471a03eaf828eda0dc42f8b914c384051f8c46f"
             }
         ],
+        "headerMapping": "",
         "headerMappingObj": {},
         "params": {},
         "paramsObj": [],
+        "paramMapping": "",
         "paramMappingObj": {},
+        "authType": "",
         "useAuthTypeMappingObj": {},
+        "useAuthTypeMap": {},
+        "useAuthType": "",
         "useAuthUsername": "",
         "useAuthUsernameMappingObj": "",
         "useAuthPassword": "",
@@ -195,6 +204,7 @@
         "proxy": "",
         "useProxy": false,
         "usetls": false,
+        "cookies": [],
         "cookiesMapObj": {},
         "cookiesList": {},
         "switchStates": {
@@ -238,6 +248,7 @@
         "acceptFileUpload": false,
         "useDataModel": false,
         "dataModelIsArray": false,
+        "uploadFileOptions": "",
         "erd": "",
         "erdName": "",
         "entity": "",
@@ -315,6 +326,7 @@
             "send": "bh.response"
         },
         "dataModelIsArray": false,
+        "cookies": [],
         "inputs": 1,
         "outputs": 0,
         "erd": "",
@@ -430,6 +442,7 @@
         "acceptFileUpload": false,
         "useDataModel": false,
         "dataModelIsArray": false,
+        "uploadFileOptions": "",
         "erd": "",
         "erdName": "",
         "entity": "",
@@ -495,70 +508,6 @@
         "generated": true
     },
     {
-        "id": "sd_g1K4PibCfLZFeyIx",
-        "type": "find",
-        "z": "SSD_SERVICE_ID_sd_KwPu3PF49Obf7td2",
-        "viewType": "server",
-        "nodeType": "flow",
-        "name": "",
-        "erd": "_DM_l5t26s97q",
-        "entityId": "_EN_9ctpcuh1k",
-        "_UI_entityName": "policy_applications",
-        "dbConfigId": "sd_nbkKdk1GxCrX8E0j",
-        "primayKey": "id",
-        "operationType": "find",
-        "_ID": "bh.local.application_id",
-        "filterBy": "bh.input",
-        "offSet": "bh",
-        "orderBy": "bh",
-        "pageSize": "bh",
-        "resultMapping": "bh.local.searchResult",
-        "functionName": "sd_g1K4PibCfLZFeyIx",
-        "category": "Data Model",
-        "x": 1065,
-        "y": 480,
-        "wires": [
-            []
-        ],
-        "__ssdTypeInputs__": {
-            "_ID": {
-                "type": "bh.local",
-                "value": "application_id",
-                "constant": false
-            },
-            "filterBy": {
-                "type": "bh.input",
-                "value": "",
-                "constant": false
-            },
-            "offSet": {
-                "type": "bh",
-                "value": "",
-                "constant": false
-            },
-            "orderBy": {
-                "type": "bh",
-                "value": "",
-                "constant": false
-            },
-            "pageSize": {
-                "type": "bh",
-                "value": "",
-                "constant": false
-            },
-            "resultMapping": {
-                "type": "bh.local",
-                "value": "searchResult",
-                "constant": false
-            }
-        },
-        "__n_excludedFromValidation__": {
-            "_ID": true
-        },
-        "generateNext": true,
-        "serviceName": "getPolicy"
-    },
-    {
         "id": "sd_5qmLad79g9kaKSe1",
         "type": "HttpOut",
         "z": "SSD_SERVICE_ID_sd_KwPu3PF49Obf7td2",
@@ -584,6 +533,7 @@
             "send": "bh.local.policySearchDataResult"
         },
         "dataModelIsArray": false,
+        "cookies": [],
         "inputs": 1,
         "outputs": 0,
         "erd": "",
@@ -636,6 +586,7 @@
         "acceptFileUpload": false,
         "useDataModel": false,
         "dataModelIsArray": false,
+        "uploadFileOptions": "",
         "erd": "",
         "erdName": "",
         "entity": "",
@@ -713,6 +664,7 @@
             "send": "bh.response"
         },
         "dataModelIsArray": false,
+        "cookies": [],
         "inputs": 1,
         "outputs": 0,
         "erd": "",
@@ -828,6 +780,7 @@
         "acceptFileUpload": false,
         "useDataModel": false,
         "dataModelIsArray": false,
+        "uploadFileOptions": "",
         "erd": "",
         "erdName": "",
         "entity": "",
@@ -896,6 +849,7 @@
             "send": "bh.local.draftApplications"
         },
         "dataModelIsArray": false,
+        "cookies": [],
         "inputs": 1,
         "outputs": 0,
         "erd": "",
@@ -1059,6 +1013,7 @@
         "acceptFileUpload": false,
         "useDataModel": false,
         "dataModelIsArray": false,
+        "uploadFileOptions": "",
         "erd": "",
         "erdName": "",
         "entity": "",
@@ -1109,6 +1064,7 @@
         "nodeType": "flow",
         "name": "",
         "databaseConfig": "sd_nbkKdk1GxCrX8E0j",
+        "queryType": "",
         "resultMap": {
             "type": "bh.local",
             "value": "policyDataById"
@@ -1121,6 +1077,7 @@
         "inputs": 1,
         "outputs": 1,
         "params": [],
+        "paramMappingObj": {},
         "dbType": "postgres",
         "functionName": "sd_wcxajt6l3tkmomib",
         "category": "Storage",
@@ -1184,6 +1141,7 @@
             "send": "bh.local.policyDataById"
         },
         "dataModelIsArray": false,
+        "cookies": [],
         "inputs": 1,
         "outputs": 0,
         "erd": "",
@@ -1236,6 +1194,7 @@
         "acceptFileUpload": false,
         "useDataModel": false,
         "dataModelIsArray": false,
+        "uploadFileOptions": "",
         "erd": "",
         "erdName": "",
         "entity": "",
@@ -1313,6 +1272,7 @@
             "send": "bh.response"
         },
         "dataModelIsArray": false,
+        "cookies": [],
         "inputs": 1,
         "outputs": 0,
         "erd": "",
@@ -1354,6 +1314,7 @@
         "nodeType": "flow",
         "name": "",
         "databaseConfig": "sd_nbkKdk1GxCrX8E0j",
+        "queryType": "",
         "resultMap": {
             "type": "bh.local",
             "value": "response"
@@ -1366,6 +1327,7 @@
         "inputs": 1,
         "outputs": 1,
         "params": [],
+        "paramMappingObj": {},
         "dbType": "postgres",
         "functionName": "sd_UwyOndAPOlhfGe0h",
         "category": "Storage",
@@ -1410,7 +1372,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "Alpha payload ",
-        "script": "bh.local.response = {\n    success: true,\n    message: \"Application  submitted successfully\",\n    caseId: bh.local.policyPayload.application_id,\n    data: {\n        caseId: bh.local.policyPayload.application_id,\n        ticket_type: bh.local.policyPayload.ticket_type,\n        fullname: bh.local.policyPayload.fullname || \"\",\n        dob: bh.local.policyPayload.dob || null,\n        gender: bh.local.policyPayload.gender || \"\",\n        email: bh.local.policyPayload.email || \"\",\n        age:bh.local.policyPayload.age || 0,\n        mobile: bh.local.policyPayload.mobile || 0,\n        address: bh.local.policyPayload.address || \"\",\n        base_premium: bh.local.policyPayload.base_premium || 0,\n        discount_percentage: bh.local.policyPayload.discount_percentage || 0,\n        final_premium:bh.local.policyPayload.final_premium || 0,\n        medical_declaration:bh.local.policyPayload.medical_declaration,\n        policy:bh.local.policyPayload.policy || \"\",\n        plan_type:bh.local.policyPayload.plan_type || \"\",\n        status: bh.local.policyPayload.status\n    }\n};\n\n// This payload will be passed to Alpha workflow\nbh.local.alphaPayload = {\n    caseType: \"subha-health-poc\",\n    caseData: {\n    caseId: bh.local.policyPayload.application_id,\n    ticket_type: bh.local.policyPayload.ticket_type,\n    fullname: bh.local.policyPayload.fullname || \"\",\n    dob: bh.local.policyPayload.dob || null,\n    gender: bh.local.policyPayload.gender || \"\",\n    email: bh.local.policyPayload.email || \"\",\n    age:bh.local.policyPayload.age || 0,\n    mobile: bh.local.policyPayload.mobile || 0,\n    address: bh.local.policyPayload.address || \"\",\n    base_premium: bh.local.policyPayload.base_premium || 0,\n    discount_percentage: bh.local.policyPayload.discount_percentage || 0,\n    final_premium:bh.local.policyPayload.final_premium || 0,\n    medical_declaration:bh.local.policyPayload.medical_declaration,\n    policy:bh.local.policyPayload.policy || \"\",\n    plan_type:bh.local.policyPayload.plan_type || \"\",\n    status: bh.local.policyPayload.status\n    }\n};\nbh.local.tokenpayload={\n    \"client_secret\":\"e28WZR6ZKyrYILTSKKClFEwNlYoGR2cvISwFCoIXP4S7DJgsaqhHRSNqpoWgYbcx_DUlrSkoA1zS5uFOzP-J9C\",\n    \"client_id\":\"0ddh_euTKkSA682Yy5HuC\",\n    \"grant_type\":\"client_credentials\"\n}\nconsole.log(\"Alpha payload:\", bh.local.alphaPayload);",
+        "script": "bh.local.response = {\n    success: true,\n    message: \"Application  submitted successfully\",\n    caseId: bh.local.policyPayload.application_id,\n    data: {\n        caseId: bh.local.policyPayload.application_id,\n        ticket_type: bh.local.policyPayload.ticket_type,\n        fullname: bh.local.policyPayload.fullname || \"\",\n        dob: bh.local.policyPayload.dob || null,\n        gender: bh.local.policyPayload.gender || \"\",\n        email: bh.local.policyPayload.email || \"\",\n        age:bh.local.policyPayload.age || 0,\n        mobile: bh.local.policyPayload.mobile || 0,\n        address: bh.local.policyPayload.address || \"\",\n        base_premium: bh.local.policyPayload.base_premium || 0,\n        discount_percentage: bh.local.policyPayload.discount_percentage || 0,\n        final_premium:bh.local.policyPayload.final_premium || 0,\n        medical_declaration:bh.local.policyPayload.medical_declaration,\n        policy:bh.local.policyPayload.policy || \"\",\n        plan_type:bh.local.policyPayload.plan_type || \"\",\n        status: bh.local.policyPayload.status\n    }\n};\n\n// This payload will be passed to Alpha workflow\nbh.local.alphaPayload = {\n    caseType: \"health-process\",\n    caseData: {\n    caseId: bh.local.policyPayload.application_id,\n    ticket_type: bh.local.policyPayload.ticket_type,\n    fullname: bh.local.policyPayload.fullname || \"\",\n    dob: bh.local.policyPayload.dob || null,\n    gender: bh.local.policyPayload.gender || \"\",\n    email: bh.local.policyPayload.email || \"\",\n    age:bh.local.policyPayload.age || 0,\n    mobile: bh.local.policyPayload.mobile || 0,\n    address: bh.local.policyPayload.address || \"\",\n    base_premium: bh.local.policyPayload.base_premium || 0,\n    discount_percentage: bh.local.policyPayload.discount_percentage || 0,\n    final_premium:bh.local.policyPayload.final_premium || 0,\n    medical_declaration:bh.local.policyPayload.medical_declaration,\n    policy:bh.local.policyPayload.policy || \"\",\n    plan_type:bh.local.policyPayload.plan_type || \"\",\n    status: bh.local.policyPayload.status\n    }\n};\nbh.local.tokenpayload={\n    \"client_secret\":\"e28WZR6ZKyrYILTSKKClFEwNlYoGR2cvISwFCoIXP4S7DJgsaqhHRSNqpoWgYbcx_DUlrSkoA1zS5uFOzP-J9C\",\n    \"client_id\":\"0ddh_euTKkSA682Yy5HuC\",\n    \"grant_type\":\"client_credentials\"\n}\nconsole.log(\"Alpha payload:\", bh.local.alphaPayload);",
         "functionName": "alphaPayload",
         "category": "Function",
         "x": 525,
@@ -1571,6 +1533,7 @@
         "paramsObj": [],
         "paramMappingObj": {},
         "authType": "bearer",
+        "useAuthType": "",
         "useAuthUsername": "",
         "useAuthUsernameMappingObj": {},
         "useAuthPassword": "",
@@ -1620,7 +1583,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "bh.local.allresponse = {\n \"ticket\" : bh.local.response,\n \"case-creation\":bh.local.alpharesponse,\n//  \"auto-assign\":bh.local.result\n}",
+        "script": "bh.local.allresponse = {\n \"ticket\" : bh.local.response,\n \"case-creation\":bh.local.alpharesponse,\n//  \"auto-assign\":bh.local.result\n}\n\nconsole.log(\"alpha resopnse\",bh.local.allresponse)",
         "functionName": "sd_sx7a5Afb4lljXzAF",
         "category": "Function",
         "x": 1020,
@@ -1654,6 +1617,7 @@
         "acceptFileUpload": false,
         "useDataModel": false,
         "dataModelIsArray": false,
+        "uploadFileOptions": "",
         "erd": "",
         "erdName": "",
         "entity": "",
@@ -1704,6 +1668,7 @@
         "nodeType": "flow",
         "name": "",
         "databaseConfig": "sd_nbkKdk1GxCrX8E0j",
+        "queryType": "",
         "resultMap": {
             "type": "bh.local",
             "value": "policyDataById"
@@ -1716,6 +1681,7 @@
         "inputs": 1,
         "outputs": 1,
         "params": [],
+        "paramMappingObj": {},
         "dbType": "postgres",
         "functionName": "sd_aYjA3WCcv3aIkmEY",
         "category": "Storage",
@@ -1821,6 +1787,7 @@
         "nodeType": "flow",
         "name": "",
         "databaseConfig": "sd_nbkKdk1GxCrX8E0j",
+        "queryType": "",
         "resultMap": {
             "type": "bh.local",
             "value": "policySearchDataResult"
@@ -1833,6 +1800,7 @@
         "inputs": 1,
         "outputs": 1,
         "params": [],
+        "paramMappingObj": {},
         "dbType": "postgres",
         "functionName": "sd_2D7kLlo5FdTdN7s5",
         "category": "Storage",
@@ -1867,6 +1835,7 @@
         "acceptFileUpload": false,
         "useDataModel": false,
         "dataModelIsArray": false,
+        "uploadFileOptions": "",
         "erd": "",
         "erdName": "",
         "entity": "",
@@ -1898,7 +1867,7 @@
         "validateRequestUsingSwaggerDocs": false,
         "category": "HTTP",
         "x": 65,
-        "y": 200,
+        "y": 180,
         "wires": [
             [
                 "sd_S7KpNOI3nzHTizfe"
@@ -1955,7 +1924,7 @@
         "resultMapping": "bh.local.response",
         "functionName": "sd_v4UwAoFunZ0Djc41",
         "category": "Data Model",
-        "x": 365,
+        "x": 385,
         "y": 180,
         "wires": [
             [

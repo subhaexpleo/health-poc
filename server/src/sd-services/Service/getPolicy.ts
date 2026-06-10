@@ -416,7 +416,7 @@ export class getPolicy {
             'd674bdf6-0554-42a8-ae27-264befe13c23.ceee41185aba511f29d2c85a1471a03eaf828eda0dc42f8b914c384051f8c46f',
         },
         followRedirects: true,
-        cookies: undefined,
+        cookies: {},
         authType: undefined,
         body: bh.local.payload,
         paytoqs: false,
@@ -603,7 +603,7 @@ export class getPolicy {
 
       // This payload will be passed to Alpha workflow
       bh.local.alphaPayload = {
-        caseType: 'subha-health-poc',
+        caseType: 'health-process',
         caseData: {
           caseId: bh.local.policyPayload.application_id,
           ticket_type: bh.local.policyPayload.ticket_type,
@@ -786,6 +786,8 @@ export class getPolicy {
         'case-creation': bh.local.alpharesponse,
         //  "auto-assign":bh.local.result
       };
+
+      console.log('alpha resopnse', bh.local.allresponse);
       this.tracerService.sendData(spanInst, bh);
       await this.sd_Fk9Wf6nmiuBExBxp(bh, parentSpanInst);
       //appendnew_next_sd_sx7a5Afb4lljXzAF
@@ -873,7 +875,7 @@ export class getPolicy {
       } else {
         throw new Error('Cannot find the selected config name');
       }
-      let params = [];
+      let params = undefined;
       params = params ? params : [];
       bh.local.policySearchDataResult =
         await new GenericRDBMSOperations().executeSQL(
@@ -1167,7 +1169,7 @@ WHERE id = '${bh.input.body.id}'
       } else {
         throw new Error('Cannot find the selected config name');
       }
-      let params = [];
+      let params = undefined;
       params = params ? params : [];
       bh.local.policyDataById = await new GenericRDBMSOperations().executeSQL(
         connectionName,
@@ -1267,7 +1269,7 @@ RETURNING *;
       } else {
         throw new Error('Cannot find the selected config name');
       }
-      let params = [];
+      let params = undefined;
       params = params ? params : [];
       bh.local.response = await new GenericRDBMSOperations().executeSQL(
         connectionName,
@@ -1359,7 +1361,7 @@ WHERE application_id = '${bh.input.body.application_id}'
       } else {
         throw new Error('Cannot find the selected config name');
       }
-      let params = [];
+      let params = undefined;
       params = params ? params : [];
       bh.local.policyDataById = await new GenericRDBMSOperations().executeSQL(
         connectionName,
