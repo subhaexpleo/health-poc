@@ -367,7 +367,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "// bh.local.ticketData = {\n//     case_id: caseId,\n//     ticket_type: body.ticketType || \"Incident\",\n//     title: body.title || \"\",\n//     description: body.description || \"\",\n//     category: body.category || \"\",\n//     priority: body.priority || \"\",\n//     assignment_group: body.assignmentGroup || \"\",\n//     requester_name: body.requesterName || \"\",\n//     requester_email: body.requesterEmail || \"\",\n//     status: \"NEW\"\n// };\n// bh.local.policyPayload = {\n//    application_id:\n//     `APP-${Date.now()}`,\n//   fullname: bh.input.fullname || \"\",\n//   dob: body.formattedDob || \"\",\n//   gender: body.gender || \"\",\n//   age:body.age || \"\",\n//   mobile: body.mobile || \"\",\n//   address: body.address || \"\",\n//   base_premium: body.basePremium || \"\",\n//   discount_percentage: body.discountPercent || \"\",\n//   policy:body.selectedPolicyTerm,\n//   plan_type:body.selectedPlanType,\n//   status:\"submitted\"\n// };\n\n// console.log(\"test\",bh);\nconst body = bh.input.body || {};\nbh.local.policyPayload = {\n   application_id:\n    `APP-${Date.now()}`,\n  ticket_type: body.ticket_type,\n  fullname: body.fullname || \"\",\n  dob: body.dob || null,\n  gender: body.gender || \"\",\n  email: body.email || \"\",\n  age:body.age || 0,\n  mobile: body.mobile || 0,\n  address: body.address || \"\",\n  base_premium: body.base_premium || 0,\n  discount_percentage: body.discount_percentage || 0,\n  final_premium:body.final_premium || 0,\n  medical_declaration:body.medical_declaration,\n  policy:body.policy || \"\",\n  plan_type:body.plan_type || \"\",\n  status:\"submitted\"\n};\n\n\n// console.log(\"BODY =>\", body);\n\n// console.log(\"ENTITY =>\", policy);",
+        "script": "// bh.local.ticketData = {\n//     case_id: caseId,\n//     ticket_type: body.ticketType || \"Incident\",\n//     title: body.title || \"\",\n//     description: body.description || \"\",\n//     category: body.category || \"\",\n//     priority: body.priority || \"\",\n//     assignment_group: body.assignmentGroup || \"\",\n//     requester_name: body.requesterName || \"\",\n//     requester_email: body.requesterEmail || \"\",\n//     status: \"NEW\"\n// };\n// bh.local.policyPayload = {\n//    application_id:\n//     `APP-${Date.now()}`,\n//   fullname: bh.input.fullname || \"\",\n//   dob: body.formattedDob || \"\",\n//   gender: body.gender || \"\",\n//   age:body.age || \"\",\n//   mobile: body.mobile || \"\",\n//   address: body.address || \"\",\n//   base_premium: body.basePremium || \"\",\n//   discount_percentage: body.discountPercent || \"\",\n//   policy:body.selectedPolicyTerm,\n//   plan_type:body.selectedPlanType,\n//   status:\"submitted\"\n// };\n\n// console.log(\"test\",bh);\nconst body = bh.input.body || {};\nbh.local.policyPayload = {\n   application_id:\n    `APP-${Date.now()}`,\n  ticket_type: body.ticket_type,\n  fullname: body.fullname || \"\",\n  dob: body.dob || null,\n  gender: body.gender || \"\",\n  email: body.email || \"\",\n  age:body.age || 0,\n  mobile: body.mobile || 0,\n  address: body.address || \"\",\n  risk_score: body.risk_score,\n  base_premium: body.base_premium || 0,\n  discount_percentage: body.discount_percentage || 0,\n  final_premium:body.final_premium || 0,\n  medical_declaration:body.medical_declaration,\n  policy:body.policy || \"\",\n  plan_type:body.plan_type || \"\",\n  status:\"submitted\"\n};\n\n\n// console.log(\"BODY =>\", body);\n\n// console.log(\"ENTITY =>\", policy);",
         "functionName": "sd_uvNTbtMv1kugmsHA",
         "category": "Function",
         "x": 225,
@@ -1372,7 +1372,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "Alpha payload ",
-        "script": "bh.local.response = {\n    success: true,\n    message: \"Application  submitted successfully\",\n    caseId: bh.local.policyPayload.application_id,\n    data: {\n        caseId: bh.local.policyPayload.application_id,\n        ticket_type: bh.local.policyPayload.ticket_type,\n        fullname: bh.local.policyPayload.fullname || \"\",\n        dob: bh.local.policyPayload.dob || null,\n        gender: bh.local.policyPayload.gender || \"\",\n        email: bh.local.policyPayload.email || \"\",\n        age:bh.local.policyPayload.age || 0,\n        mobile: bh.local.policyPayload.mobile || 0,\n        address: bh.local.policyPayload.address || \"\",\n        base_premium: bh.local.policyPayload.base_premium || 0,\n        discount_percentage: bh.local.policyPayload.discount_percentage || 0,\n        final_premium:bh.local.policyPayload.final_premium || 0,\n        medical_declaration:bh.local.policyPayload.medical_declaration,\n        policy:bh.local.policyPayload.policy || \"\",\n        plan_type:bh.local.policyPayload.plan_type || \"\",\n        status: bh.local.policyPayload.status\n    }\n};\n\n// This payload will be passed to Alpha workflow\nbh.local.alphaPayload = {\n    caseType: \"health-process\",\n    caseData: {\n    caseId: bh.local.policyPayload.application_id,\n    ticket_type: bh.local.policyPayload.ticket_type,\n    fullname: bh.local.policyPayload.fullname || \"\",\n    dob: bh.local.policyPayload.dob || null,\n    gender: bh.local.policyPayload.gender || \"\",\n    email: bh.local.policyPayload.email || \"\",\n    age:bh.local.policyPayload.age || 0,\n    mobile: bh.local.policyPayload.mobile || 0,\n    address: bh.local.policyPayload.address || \"\",\n    base_premium: bh.local.policyPayload.base_premium || 0,\n    discount_percentage: bh.local.policyPayload.discount_percentage || 0,\n    final_premium:bh.local.policyPayload.final_premium || 0,\n    medical_declaration:bh.local.policyPayload.medical_declaration,\n    policy:bh.local.policyPayload.policy || \"\",\n    plan_type:bh.local.policyPayload.plan_type || \"\",\n    status: bh.local.policyPayload.status\n    }\n};\nbh.local.tokenpayload={\n    \"client_secret\":\"e28WZR6ZKyrYILTSKKClFEwNlYoGR2cvISwFCoIXP4S7DJgsaqhHRSNqpoWgYbcx_DUlrSkoA1zS5uFOzP-J9C\",\n    \"client_id\":\"0ddh_euTKkSA682Yy5HuC\",\n    \"grant_type\":\"client_credentials\"\n}\nconsole.log(\"Alpha payload:\", bh.local.alphaPayload);",
+        "script": "bh.local.response = {\n    success: true,\n    message: \"Application  submitted successfully\",\n    caseId: bh.local.policyPayload.application_id,\n    data: {\n        application_id: bh.local.policyPayload.application_id,\n        ticket_type: bh.local.policyPayload.ticket_type,\n        fullname: bh.local.policyPayload.fullname || \"\",\n        dob: bh.local.policyPayload.dob || null,\n        gender: bh.local.policyPayload.gender || \"\",\n        email: bh.local.policyPayload.email || \"\",\n        age:bh.local.policyPayload.age || 0,\n        mobile: bh.local.policyPayload.mobile || 0,\n        address: bh.local.policyPayload.address || \"\",\n        risk_score: bh.local.policyPayload.risk_score,\n        base_premium: bh.local.policyPayload.base_premium || 0,\n        discount_percentage: bh.local.policyPayload.discount_percentage || 0,\n        final_premium:bh.local.policyPayload.final_premium || 0,\n        medical_declaration:bh.local.policyPayload.medical_declaration,\n        policy:bh.local.policyPayload.policy || \"\",\n        plan_type:bh.local.policyPayload.plan_type || \"\",\n        status: bh.local.policyPayload.status\n    }\n};\n\n// This payload will be passed to Alpha workflow\nbh.local.alphaPayload = {\n    caseType: \"health-process\",\n    caseData: {\n    caseId: bh.local.policyPayload.application_id,\n    application_id: bh.local.policyPayload.application_id,\n    ticket_type: bh.local.policyPayload.ticket_type,\n    fullname: bh.local.policyPayload.fullname || \"\",\n    dob: bh.local.policyPayload.dob || null,\n    gender: bh.local.policyPayload.gender || \"\",\n    email: bh.local.policyPayload.email || \"\",\n    age:bh.local.policyPayload.age || 0,\n    mobile: bh.local.policyPayload.mobile || 0,\n    address: bh.local.policyPayload.address || \"\",\n    risk_score: bh.local.policyPayload.risk_score,\n    base_premium: bh.local.policyPayload.base_premium || 0,\n    discount_percentage: bh.local.policyPayload.discount_percentage || 0,\n    final_premium:bh.local.policyPayload.final_premium || 0,\n    medical_declaration:bh.local.policyPayload.medical_declaration,\n    policy:bh.local.policyPayload.policy || \"\",\n    plan_type:bh.local.policyPayload.plan_type || \"\",\n    status: bh.local.policyPayload.status\n    }\n};\nbh.local.tokenpayload={\n    \"client_secret\":\"e28WZR6ZKyrYILTSKKClFEwNlYoGR2cvISwFCoIXP4S7DJgsaqhHRSNqpoWgYbcx_DUlrSkoA1zS5uFOzP-J9C\",\n    \"client_id\":\"0ddh_euTKkSA682Yy5HuC\",\n    \"grant_type\":\"client_credentials\"\n}\nconsole.log(\"Alpha payload:\", bh.local.alphaPayload);",
         "functionName": "alphaPayload",
         "category": "Function",
         "x": 525,
@@ -1395,6 +1395,7 @@
         "nodeType": "flow",
         "name": "Token Api",
         "method": "post",
+        "methodMapping": "",
         "methodMappingObj": {},
         "urlMapping": "\"https://ids-ctr-pt.neutrinos-apps.com/token\"",
         "urlMappingObj": {
@@ -1402,6 +1403,7 @@
             "mapVarValue": "https://ids-ctr-pt.neutrinos-apps.com/token"
         },
         "ret": "json",
+        "retMapping": "",
         "retMappingObj": {},
         "reqBody": "bh.local.tokenpayload",
         "reqBodyObj": {
@@ -1422,11 +1424,16 @@
                 "defaultValue": "application/x-www-form-urlencoded"
             }
         ],
+        "headerMapping": "",
         "headerMappingObj": {},
         "params": {},
         "paramsObj": [],
+        "paramMapping": "",
         "paramMappingObj": {},
+        "authType": "",
         "useAuthTypeMappingObj": {},
+        "useAuthTypeMap": {},
+        "useAuthType": "",
         "useAuthUsername": "",
         "useAuthUsernameMappingObj": "",
         "useAuthPassword": "",
@@ -1442,6 +1449,7 @@
         "proxy": "",
         "useProxy": false,
         "usetls": false,
+        "cookies": [],
         "cookiesMapObj": {},
         "cookiesList": {},
         "switchStates": {
@@ -1496,6 +1504,7 @@
         "nodeType": "flow",
         "name": "Case creation",
         "method": "post",
+        "methodMapping": "",
         "methodMappingObj": {},
         "urlMapping": "\"https://alpha-pt.neutrinos-apps.com/caseservice/case/instance/create\"",
         "urlMappingObj": {
@@ -1503,6 +1512,7 @@
             "mapVarValue": "https://alpha-pt.neutrinos-apps.com/caseservice/case/instance/create"
         },
         "ret": "json",
+        "retMapping": "",
         "retMappingObj": {},
         "reqBody": "bh.local.alphaPayload",
         "reqBodyObj": {
@@ -1528,11 +1538,15 @@
                 "defaultValue": "application/json"
             }
         ],
+        "headerMapping": "",
         "headerMappingObj": {},
         "params": {},
         "paramsObj": [],
+        "paramMapping": "",
         "paramMappingObj": {},
         "authType": "bearer",
+        "useAuthTypeMappingObj": {},
+        "useAuthTypeMap": {},
         "useAuthType": "",
         "useAuthUsername": "",
         "useAuthUsernameMappingObj": {},
@@ -1552,6 +1566,7 @@
         "proxy": "",
         "useProxy": false,
         "usetls": false,
+        "cookies": [],
         "cookiesMapObj": {},
         "cookiesList": {},
         "switchStates": {
@@ -2004,6 +2019,184 @@
         "category": "HTTP",
         "x": 525,
         "y": 180,
+        "wires": [],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "getPolicy",
+        "generated": true
+    },
+    {
+        "id": "sd_w3dc7K0nFkInkLw9",
+        "type": "HttpIn",
+        "z": "SSD_SERVICE_ID_sd_KwPu3PF49Obf7td2",
+        "viewType": "server",
+        "nodeType": "start",
+        "name": "updateOnePolicy",
+        "path": "/updateOnePolicy",
+        "uploadpath": "",
+        "summary": "",
+        "description": "",
+        "method": "post",
+        "sequenceId": "",
+        "consumes": "",
+        "produces": "",
+        "filetype": "path",
+        "acceptFileUpload": false,
+        "useDataModel": false,
+        "dataModelIsArray": false,
+        "uploadFileOptions": "",
+        "erd": "",
+        "erdName": "",
+        "entity": "",
+        "entityId": "",
+        "ref": "",
+        "editableListData": {
+            "responses": [],
+            "params": [],
+            "produces": [],
+            "consumes": [
+                {
+                    "key": "application/json",
+                    "rowId": "sd_YxvFdM1Orvadpi4D",
+                    "valid": true
+                }
+            ]
+        },
+        "inputs": 0,
+        "outputs": 1,
+        "validateRequestUsingSwaggerDocs": false,
+        "category": "HTTP",
+        "x": 63.75,
+        "y": 1138.5025634765625,
+        "wires": [
+            [
+                "sd_uXvok1GRUy4EG8Ue"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "uploadpath": {
+                "type": "str",
+                "value": "",
+                "nullable": "true",
+                "nullableValue": "",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "getPolicy",
+        "functionName": "sd_w3dc7K0nFkInkLw9"
+    },
+    {
+        "id": "sd_8g41pm8Li2P7InX3",
+        "type": "ExecuteSql",
+        "z": "SSD_SERVICE_ID_sd_KwPu3PF49Obf7td2",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "databaseConfig": "sd_nbkKdk1GxCrX8E0j",
+        "resultMap": {
+            "type": "bh.local",
+            "value": "policyDataById"
+        },
+        "multipleQuery": "",
+        "singleQuery": {
+            "type": "bh.local",
+            "value": "searchQuery"
+        },
+        "inputs": 1,
+        "outputs": 1,
+        "params": [],
+        "dbType": "postgres",
+        "functionName": "sd_8g41pm8Li2P7InX3",
+        "category": "Storage",
+        "x": 383.75,
+        "y": 1138.5025634765625,
+        "wires": [
+            [
+                "sd_OCwaU4aEVmmUQExg"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "getPolicy",
+        "generated": true
+    },
+    {
+        "id": "sd_uXvok1GRUy4EG8Ue",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_KwPu3PF49Obf7td2",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.local.searchQuery = `\nUPDATE policy_applications\nSET status = '${bh.input.body.status}'\nWHERE application_id = '${bh.input.body.application_id}'\nRETURNING *;\n`;",
+        "functionName": "sd_uXvok1GRUy4EG8Ue",
+        "category": "Function",
+        "x": 223.75,
+        "y": 1138.5025634765625,
+        "wires": [
+            [
+                "sd_8g41pm8Li2P7InX3"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "getPolicy",
+        "generated": true
+    },
+    {
+        "id": "sd_OCwaU4aEVmmUQExg",
+        "type": "HttpOut",
+        "z": "SSD_SERVICE_ID_sd_KwPu3PF49Obf7td2",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "headers": {},
+        "responseBody": {
+            "type": "bh.local",
+            "value": "policyDataById",
+            "ssd_typedInputField": true
+        },
+        "httpcode": {
+            "type": "num",
+            "value": 200,
+            "ssd_typedInputField": true
+        },
+        "responseType": "obj",
+        "swaggerResponse": {},
+        "responseMapping": {
+            "status": 200,
+            "obj": "bh.local.policyDataById",
+            "send": "bh.local.policyDataById"
+        },
+        "dataModelIsArray": false,
+        "inputs": 1,
+        "outputs": 0,
+        "erd": "",
+        "entity": "",
+        "entityId": "",
+        "ref": "",
+        "editableListData": {
+            "headers": [],
+            "produces": [],
+            "responses": [
+                {
+                    "key": "policyData updated succesfully",
+                    "value": "200",
+                    "rowId": "sd_BLu7LQVSuOBoH0Ze",
+                    "valid": true
+                }
+            ]
+        },
+        "cookiesList": {},
+        "switchStates": {
+            "headers": "Map",
+            "cookies": "Map"
+        },
+        "functionName": "sd_OCwaU4aEVmmUQExg",
+        "category": "HTTP",
+        "x": 663.75,
+        "y": 1138.5025634765625,
         "wires": [],
         "__n_excludedFromValidation__": {},
         "generateNext": false,

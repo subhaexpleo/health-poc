@@ -312,6 +312,23 @@
                 "dbColName": "",
                 "constraints": {}
             }
+        },
+        "risk_score": {
+            "name": "risk_score",
+            "format": "",
+            "type": "number",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_ny12enmi9s",
+                "subCategoryType": null,
+                "nullable": false,
+                "dbType": "bigint",
+                "primary": false,
+                "placeholder": "",
+                "dbColName": "",
+                "constraints": {}
+            }
         }
     },
     "required": [
@@ -331,7 +348,8 @@
         "discount_percentage",
         "created_at",
         "final_premium",
-        "ticket_type"
+        "ticket_type",
+        "risk_score"
     ],
     "value": "",
     "__attributeExpansion__": true,

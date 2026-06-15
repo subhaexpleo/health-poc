@@ -372,6 +372,38 @@ export class getPolicy {
         this.generatedMiddlewares
       )
     );
+
+    this.app['post'](
+      `${this.serviceBasePath}/updateOnePolicy`,
+      cookieParser(),
+      this.sdService.getMiddlesWaresBySequenceId(
+        null,
+        'pre',
+        this.generatedMiddlewares
+      ),
+
+      async (req, res, next) => {
+        let bh: any = {};
+        try {
+          bh = this.sdService.__constructDefault(
+            { local: {}, input: {} },
+            req,
+            res,
+            next
+          );
+          let parentSpanInst = null;
+          bh = await this.sd_uXvok1GRUy4EG8Ue(bh, parentSpanInst);
+          //appendnew_next_sd_w3dc7K0nFkInkLw9
+        } catch (e) {
+          return await this.errorHandler(bh, e, 'sd_w3dc7K0nFkInkLw9');
+        }
+      },
+      this.sdService.getMiddlesWaresBySequenceId(
+        null,
+        'post',
+        this.generatedMiddlewares
+      )
+    );
     //appendnew_flow_getPolicy_HttpIn
   }
   //   service flows_getPolicy
@@ -517,6 +549,7 @@ export class getPolicy {
         age: body.age || 0,
         mobile: body.mobile || 0,
         address: body.address || '',
+        risk_score: body.risk_score,
         base_premium: body.base_premium || 0,
         discount_percentage: body.discount_percentage || 0,
         final_premium: body.final_premium || 0,
@@ -582,7 +615,7 @@ export class getPolicy {
         message: 'Application  submitted successfully',
         caseId: bh.local.policyPayload.application_id,
         data: {
-          caseId: bh.local.policyPayload.application_id,
+          application_id: bh.local.policyPayload.application_id,
           ticket_type: bh.local.policyPayload.ticket_type,
           fullname: bh.local.policyPayload.fullname || '',
           dob: bh.local.policyPayload.dob || null,
@@ -591,6 +624,7 @@ export class getPolicy {
           age: bh.local.policyPayload.age || 0,
           mobile: bh.local.policyPayload.mobile || 0,
           address: bh.local.policyPayload.address || '',
+          risk_score: bh.local.policyPayload.risk_score,
           base_premium: bh.local.policyPayload.base_premium || 0,
           discount_percentage: bh.local.policyPayload.discount_percentage || 0,
           final_premium: bh.local.policyPayload.final_premium || 0,
@@ -606,6 +640,7 @@ export class getPolicy {
         caseType: 'health-process',
         caseData: {
           caseId: bh.local.policyPayload.application_id,
+          application_id: bh.local.policyPayload.application_id,
           ticket_type: bh.local.policyPayload.ticket_type,
           fullname: bh.local.policyPayload.fullname || '',
           dob: bh.local.policyPayload.dob || null,
@@ -614,6 +649,7 @@ export class getPolicy {
           age: bh.local.policyPayload.age || 0,
           mobile: bh.local.policyPayload.mobile || 0,
           address: bh.local.policyPayload.address || '',
+          risk_score: bh.local.policyPayload.risk_score,
           base_premium: bh.local.policyPayload.base_premium || 0,
           discount_percentage: bh.local.policyPayload.discount_percentage || 0,
           final_premium: bh.local.policyPayload.final_premium || 0,
@@ -653,7 +689,7 @@ export class getPolicy {
         method: 'post',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         followRedirects: true,
-        cookies: undefined,
+        cookies: {},
         authType: undefined,
         body: bh.local.tokenpayload,
         paytoqs: false,
@@ -730,7 +766,7 @@ export class getPolicy {
           'Content-Type': 'application/json',
         },
         followRedirects: true,
-        cookies: undefined,
+        cookies: {},
         authType: 'bearer',
         body: bh.local.alphaPayload,
         paytoqs: false,
@@ -1500,6 +1536,85 @@ WHERE application_id = '${bh.input.body.application_id}'
       return bh;
     } catch (e) {
       return await this.errorHandler(bh, e, 'sd_sXHk57R1nsWxch6a');
+    }
+  }
+
+  async sd_uXvok1GRUy4EG8Ue(bh, parentSpanInst) {
+    const spanInst = this.tracerService.createSpan(
+      'sd_uXvok1GRUy4EG8Ue',
+      parentSpanInst
+    );
+    try {
+      bh.local.searchQuery = `
+UPDATE policy_applications
+SET status = '${bh.input.body.status}'
+WHERE application_id = '${bh.input.body.application_id}'
+RETURNING *;
+`;
+      this.tracerService.sendData(spanInst, bh);
+      bh = await this.sd_8g41pm8Li2P7InX3(bh, parentSpanInst);
+      //appendnew_next_sd_uXvok1GRUy4EG8Ue
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(
+        bh,
+        e,
+        'sd_uXvok1GRUy4EG8Ue',
+        spanInst,
+        'sd_uXvok1GRUy4EG8Ue'
+      );
+    }
+  }
+
+  async sd_8g41pm8Li2P7InX3(bh, parentSpanInst) {
+    const spanInst = this.tracerService.createSpan(
+      'sd_8g41pm8Li2P7InX3',
+      parentSpanInst
+    );
+    try {
+      let configObj = this.sdService.getConfigObj(
+        'db-config',
+        'sd_nbkKdk1GxCrX8E0j'
+      );
+      let connectionName;
+      if (
+        configObj &&
+        configObj.hasOwnProperty('dbOption') &&
+        configObj.dbOption.hasOwnProperty('name')
+      ) {
+        connectionName = configObj.dbOption.name;
+      } else {
+        throw new Error('Cannot find the selected config name');
+      }
+      let params = [];
+      params = params ? params : [];
+      bh.local.policyDataById = await new GenericRDBMSOperations().executeSQL(
+        connectionName,
+        bh.local.searchQuery,
+        params
+      );
+      this.tracerService.sendData(spanInst, bh);
+      await this.sd_OCwaU4aEVmmUQExg(bh, parentSpanInst);
+      //appendnew_next_sd_8g41pm8Li2P7InX3
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(
+        bh,
+        e,
+        'sd_8g41pm8Li2P7InX3',
+        spanInst,
+        'sd_8g41pm8Li2P7InX3'
+      );
+    }
+  }
+
+  async sd_OCwaU4aEVmmUQExg(bh, parentSpanInst) {
+    try {
+      bh.web.res.status(200).send(bh.local.policyDataById);
+
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_OCwaU4aEVmmUQExg');
     }
   }
 

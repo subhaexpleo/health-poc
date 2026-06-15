@@ -80,4 +80,11 @@ export class policy_applications {
     primary: false,
   })
   ticket_type: string;
+  @Column({
+    name: 'risk_score',
+    nullable: false,
+    type: 'bigint',
+    primary: false,
+  })
+  risk_score: number;
 }
