@@ -1343,25 +1343,16 @@ RETURNING *;
       parentSpanInst
     );
     try {
-      // bh.local.searchQuery = `
-      // SELECT *
-      // FROM policy_applications
-      // WHERE application_id = '${bh.input.id}';
-      // `;
-
-      // console.log("kjhskfhkdsjf ",bh)
-      // console.log("Received ID =>", bh.input.body.id);
+      console.log('Request Body:', bh.input.body);
+      console.log('Application ID:', bh.input.body.application_id);
+      console.log('Status:', bh.input.body.status);
 
       bh.local.searchQuery = `
-SELECT *
-FROM policy_applications
-WHERE application_id = '${bh.input.body.application_id}'
+UPDATE policy_applications
+SET status = '${bh.local.status}'
+WHERE application_id = '${bh.local.application_id}'
+RETURNING *;
 `;
-
-      // console.log(
-      //   bh.local.searchQuery
-      // );
-
       this.tracerService.sendData(spanInst, bh);
       bh = await this.sd_aYjA3WCcv3aIkmEY(bh, parentSpanInst);
       //appendnew_next_sd_sNvh7GTu2GwIZPEw
@@ -1545,6 +1536,7 @@ WHERE application_id = '${bh.input.body.application_id}'
       parentSpanInst
     );
     try {
+      console.log('BODY', bh.input.body);
       bh.local.searchQuery = `
 UPDATE policy_applications
 SET status = '${bh.input.body.status}'
